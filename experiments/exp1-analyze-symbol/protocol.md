@@ -69,3 +69,10 @@ expected values -- it does not see which cell produced a given run until after s
 
 Fixtures and rubric: done. Harness: `recipe/harness.py`, dry-run validated against 1 live
 call. Full 320-call run: **not yet executed** -- pending explicit go-ahead (real API spend).
+
+Run mechanics: the harness accepts either `ANTHROPIC_API_KEY` or `OPENROUTER_API_KEY`
+(`ANTHROPIC_API_KEY` takes priority if both are set). OpenRouter's `/v1/messages` route
+returns the native, first-party Anthropic Messages API response shape, not an OpenAI-format
+translation, so it does not introduce a calling-path confound. Under OpenRouter,
+`--confirm-full-run` submits via OpenRouter's async Batch API, which has only a 24-hour
+completion window -- results are not immediate.

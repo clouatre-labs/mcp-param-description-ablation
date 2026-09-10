@@ -5,6 +5,7 @@ description = "Harness for the MCP parameter-description ablation experiment (cl
 requires-python = ">=3.11"
 dependencies = [
     "anthropic>=0.69.0",
+    "httpx>=0.25.0",
 ]
 
 [dependency-groups]

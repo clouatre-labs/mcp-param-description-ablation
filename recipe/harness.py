@@ -18,16 +18,29 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import random
 import string
 from dataclasses import dataclass
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
+from time import sleep
 
 MODELS = ["claude-haiku-4-5-20251001", "claude-sonnet-5"]
 CELLS = ["a", "b", "c", "d"]
 RUNS_PER_CELL_MODEL_PROMPT = 5
 MAX_TOKENS = 1024
+
+OPENROUTER_MODEL_SLUGS = {
+    "claude-haiku-4-5-20251001": "anthropic/claude-haiku-4.5",
+    "claude-sonnet-5": "anthropic/claude-sonnet-5",
+}
+OPENROUTER_MESSAGES_URL = "https://openrouter.ai/api/v1/messages"
+OPENROUTER_BATCHES_URL = "https://openrouter.ai/api/beta/batches"
+OPENROUTER_BATCH_TERMINAL_STATUSES = {"completed", "failed", "expired", "cancelled"}
+OPENROUTER_BATCH_POLL_SECONDS = 5
+# 1h margin over OpenRouter's documented 24h completion window (see README.md).
+OPENROUTER_BATCH_MAX_WAIT_SECONDS = 25 * 60 * 60
 
 
 @dataclass
@@ -43,7 +56,9 @@ class Call:
 
 def load_experiment(exp_dir: Path) -> tuple[dict[str, dict], list[dict], list[dict]]:
     fixtures_dir = exp_dir / "fixtures"
-    cells = {c: json.loads((fixtures_dir / f"cell-{c}.json").read_text()) for c in CELLS}
+    cells = {
+        c: json.loads((fixtures_dir / f"cell-{c}.json").read_text()) for c in CELLS
+    }
     distractors = json.loads((fixtures_dir / "distractors.json").read_text())["tools"]
     prompts = json.loads((exp_dir / "prompts.json").read_text())["prompts"]
     return cells, distractors, prompts
@@ -56,7 +71,11 @@ def build_tools(cell: dict, distractors: list[dict]) -> list[dict]:
         "input_schema": cell["tool"]["input_schema"],
     }
     others = [
-        {"name": t["name"], "description": t["description"], "input_schema": t["input_schema"]}
+        {
+            "name": t["name"],
+            "description": t["description"],
+            "input_schema": t["input_schema"],
+        }
         for t in distractors
     ]
     return [primary, *others]
@@ -70,7 +89,9 @@ def gen_run_id(existing: set[str]) -> str:
             return rid
 
 
-def plan_calls(cells: dict[str, dict], distractors: list[dict], prompts: list[dict]) -> list[Call]:
+def plan_calls(
+    cells: dict[str, dict], distractors: list[dict], prompts: list[dict]
+) -> list[Call]:
     calls: list[Call] = []
     seen_ids: set[str] = set()
     for cell_id in CELLS:
@@ -93,9 +114,56 @@ def plan_calls(cells: dict[str, dict], distractors: list[dict], prompts: list[di
     return calls
 
 
-def execute_call(client, call: Call) -> dict:
+def resolve_provider() -> tuple[str, str]:
+    """Pick a calling provider from environment credentials.
+
+    ANTHROPIC_API_KEY takes priority when both are set, preserving the harness's original
+    default behavior. OPENROUTER_API_KEY is the alternate path (native Anthropic Messages
+    shape via OpenRouter's /v1/messages and async batch endpoints).
+    """
+    anthropic_key = os.environ.get("ANTHROPIC_API_KEY")
+    if anthropic_key:
+        return "anthropic", anthropic_key
+    openrouter_key = os.environ.get("OPENROUTER_API_KEY")
+    if openrouter_key:
+        return "openrouter", openrouter_key
+    raise SystemExit(
+        "Set ANTHROPIC_API_KEY or OPENROUTER_API_KEY in the environment to run "
+        "--smoke-test or --confirm-full-run."
+    )
+
+
+def build_messages_body(call: Call, model: str) -> dict:
     # No temperature/top_p/top_k passed: claude-sonnet-5 returns HTTP 400 on any explicit
     # value, so both models run at API default for comparability (frozen run spec).
+    return {
+        "model": model,
+        "max_tokens": MAX_TOKENS,
+        "tools": call.tools,
+        "tool_choice": {"type": "auto"},
+        "messages": [{"role": "user", "content": call.prompt_text}],
+    }
+
+
+def _normalize_messages_response(body: dict) -> dict:
+    tool_uses = [
+        {"name": b["name"], "input": b["input"]}
+        for b in body["content"]
+        if b["type"] == "tool_use"
+    ]
+    text_blocks = [b["text"] for b in body["content"] if b["type"] == "text"]
+    return {
+        "stop_reason": body["stop_reason"],
+        "tool_uses": tool_uses,
+        "text": text_blocks,
+        "usage": {
+            "input_tokens": body["usage"]["input_tokens"],
+            "output_tokens": body["usage"]["output_tokens"],
+        },
+    }
+
+
+def _send_anthropic(client, call: Call) -> dict:
     response = client.messages.create(
         model=call.model,
         max_tokens=MAX_TOKENS,
@@ -103,29 +171,75 @@ def execute_call(client, call: Call) -> dict:
         tool_choice={"type": "auto"},
         messages=[{"role": "user", "content": call.prompt_text}],
     )
-    tool_uses = [
-        {"name": b.name, "input": b.input}
-        for b in response.content
-        if b.type == "tool_use"
-    ]
-    text_blocks = [b.text for b in response.content if b.type == "text"]
-    return {
-        "stop_reason": response.stop_reason,
-        "tool_uses": tool_uses,
-        "text": text_blocks,
-        "usage": {
-            "input_tokens": response.usage.input_tokens,
-            "output_tokens": response.usage.output_tokens,
-        },
+    return _normalize_messages_response(response.model_dump())
+
+
+def _send_openrouter(http_client, api_key: str, call: Call) -> dict:
+    model_slug = OPENROUTER_MODEL_SLUGS[call.model]
+    body = build_messages_body(call, model_slug)
+    response = http_client.post(
+        OPENROUTER_MESSAGES_URL,
+        headers={"Authorization": f"Bearer {api_key}"},
+        json=body,
+    )
+    response.raise_for_status()
+    return _normalize_messages_response(response.json())
+
+
+def execute_call(provider: str, client, call: Call, api_key: str) -> dict:
+    if provider == "anthropic":
+        return _send_anthropic(client, call)
+    return _send_openrouter(client, api_key, call)
+
+
+def submit_openrouter_batch(
+    http_client, api_key: str, model_slug: str, calls: list[Call]
+) -> str:
+    body = {
+        "endpoint": "/v1/messages",
+        "model": model_slug,
+        "requests": [
+            {"custom_id": call.run_id, "body": build_messages_body(call, model_slug)}
+            for call in calls
+        ],
     }
+    response = http_client.post(
+        OPENROUTER_BATCHES_URL,
+        headers={"Authorization": f"Bearer {api_key}"},
+        json=body,
+    )
+    response.raise_for_status()
+    return response.json()["id"]
+
+
+def poll_openrouter_batch(http_client, api_key: str, batch_id: str) -> dict:
+    url = f"{OPENROUTER_BATCHES_URL}/{batch_id}"
+    elapsed = 0
+    while elapsed <= OPENROUTER_BATCH_MAX_WAIT_SECONDS:
+        response = http_client.get(url, headers={"Authorization": f"Bearer {api_key}"})
+        response.raise_for_status()
+        batch = response.json()
+        if batch["status"] in OPENROUTER_BATCH_TERMINAL_STATUSES:
+            return batch
+        sleep(OPENROUTER_BATCH_POLL_SECONDS)
+        elapsed += OPENROUTER_BATCH_POLL_SECONDS
+    raise TimeoutError(
+        f"Batch {batch_id} did not reach a terminal status within "
+        f"{OPENROUTER_BATCH_MAX_WAIT_SECONDS}s. It may still be running -- check "
+        f"GET {OPENROUTER_BATCHES_URL}/{batch_id} directly."
+    )
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--experiment", required=True, type=Path)
     mode = parser.add_mutually_exclusive_group(required=True)
-    mode.add_argument("--dry-run", action="store_true", help="Build payloads, send nothing.")
-    mode.add_argument("--smoke-test", action="store_true", help="Send exactly 1 real call.")
+    mode.add_argument(
+        "--dry-run", action="store_true", help="Build payloads, send nothing."
+    )
+    mode.add_argument(
+        "--smoke-test", action="store_true", help="Send exactly 1 real call."
+    )
     mode.add_argument(
         "--confirm-full-run",
         action="store_true",
@@ -138,28 +252,42 @@ def main() -> None:
     exp_dir = args.experiment
     cells, distractors, prompts = load_experiment(exp_dir)
     calls = plan_calls(cells, distractors, prompts)
-    print(f"Planned {len(calls)} calls across {len(CELLS)} cells x {len(MODELS)} models x "
-          f"{len(prompts)} prompts x {RUNS_PER_CELL_MODEL_PROMPT} runs.")
+    print(
+        f"Planned {len(calls)} calls across {len(CELLS)} cells x {len(MODELS)} models x "
+        f"{len(prompts)} prompts x {RUNS_PER_CELL_MODEL_PROMPT} runs."
+    )
 
     if args.dry_run:
         sample = calls[0]
-        print(f"Sample call (run_id={sample.run_id}, cell={sample.cell}, model={sample.model}, "
-              f"prompt={sample.prompt_id}):")
-        print(json.dumps(
-            {
-                "model": sample.model,
-                "max_tokens": MAX_TOKENS,
-                "tools": sample.tools,
-                "tool_choice": {"type": "auto"},
-                "messages": [{"role": "user", "content": sample.prompt_text}],
-            },
-            indent=2,
-        ))
+        print(
+            f"Sample call (run_id={sample.run_id}, cell={sample.cell}, model={sample.model}, "
+            f"prompt={sample.prompt_id}):"
+        )
+        print(
+            json.dumps(
+                {
+                    "model": sample.model,
+                    "max_tokens": MAX_TOKENS,
+                    "tools": sample.tools,
+                    "tool_choice": {"type": "auto"},
+                    "messages": [{"role": "user", "content": sample.prompt_text}],
+                },
+                indent=2,
+            )
+        )
         return
 
-    import anthropic  # deferred: only needed for real API calls
+    provider, api_key = resolve_provider()
 
-    client = anthropic.Anthropic()
+    if provider == "anthropic":
+        import anthropic  # deferred: only needed for real API calls
+
+        client = anthropic.Anthropic()
+    else:
+        import httpx  # deferred: only needed for real API calls
+
+        client = httpx.Client(timeout=120.0)
+
     todo = calls[:1] if args.smoke_test else calls
 
     if args.smoke_test:
@@ -168,32 +296,88 @@ def main() -> None:
         raw_dir = exp_dir / "raw" / "smoke-test"
         raw_dir.mkdir(parents=True, exist_ok=True)
         for call in todo:
-            result = execute_call(client, call)
-            (raw_dir / f"{call.run_id}.json").write_text(json.dumps(result, indent=2) + "\n")
-            print(f"  {call.run_id}: {result['stop_reason']}, "
-                  f"{len(result['tool_uses'])} tool_use block(s)")
-        print(f"Smoke test: wrote {len(todo)} result(s) to {raw_dir} (not part of the sealed run)")
+            result = execute_call(provider, client, call, api_key)
+            (raw_dir / f"{call.run_id}.json").write_text(
+                json.dumps(result, indent=2) + "\n"
+            )
+            print(
+                f"  {call.run_id}: {result['stop_reason']}, "
+                f"{len(result['tool_uses'])} tool_use block(s)"
+            )
+        print(
+            f"Smoke test: wrote {len(todo)} result(s) to {raw_dir} (not part of the sealed run)"
+        )
         return
 
-    print(f"Executing all {len(todo)} calls against the live API. This spends real money.")
+    print(
+        f"Executing all {len(todo)} calls against the live API. This spends real money."
+    )
     raw_dir = exp_dir / "raw"
     raw_dir.mkdir(exist_ok=True)
     label_map_path = exp_dir / "label-map.json"
     label_map = json.loads(label_map_path.read_text())
 
-    for call in todo:
-        result = execute_call(client, call)
-        (raw_dir / f"{call.run_id}.json").write_text(json.dumps(result, indent=2) + "\n")
-        label_map["assignments"][call.run_id] = {
-            "cell": call.cell,
-            "model": call.model,
-            "prompt_id": call.prompt_id,
-            "run_index": call.run_index,
-        }
-        print(f"  {call.run_id}: {result['stop_reason']}, "
-              f"{len(result['tool_uses'])} tool_use block(s)")
+    if provider == "anthropic":
+        for call in todo:
+            result = execute_call(provider, client, call, api_key)
+            (raw_dir / f"{call.run_id}.json").write_text(
+                json.dumps(result, indent=2) + "\n"
+            )
+            label_map["assignments"][call.run_id] = {
+                "cell": call.cell,
+                "model": call.model,
+                "prompt_id": call.prompt_id,
+                "run_index": call.run_index,
+            }
+            print(
+                f"  {call.run_id}: {result['stop_reason']}, "
+                f"{len(result['tool_uses'])} tool_use block(s)"
+            )
+    else:
+        # Async Batch API: OpenRouter rejects a batch whose request bodies' model fields
+        # don't all match the top-level model field (HTTP 400), so submit one batch per
+        # model rather than one batch for the whole run.
+        calls_by_model: dict[str, list[Call]] = {}
+        for call in todo:
+            calls_by_model.setdefault(call.model, []).append(call)
 
-    label_map["sealed_at"] = datetime.now(timezone.utc).isoformat()
+        results_by_run_id: dict[str, dict] = {}
+        for model, model_calls in calls_by_model.items():
+            model_slug = OPENROUTER_MODEL_SLUGS[model]
+            batch_id = submit_openrouter_batch(client, api_key, model_slug, model_calls)
+            # Logged before polling so the ID survives a network interruption during the
+            # 24h window -- the batch keeps running server-side and can be checked manually.
+            print(
+                f"  submitted batch {batch_id} for {model} ({len(model_calls)} calls)"
+            )
+            batch = poll_openrouter_batch(client, api_key, batch_id)
+            for item in batch["results"]:
+                if item.get("error"):
+                    raise RuntimeError(
+                        f"OpenRouter batch {batch_id} entry {item['custom_id']} failed: "
+                        f"{item['error']}"
+                    )
+                results_by_run_id[item["custom_id"]] = _normalize_messages_response(
+                    item["response"]["body"]
+                )
+
+        for call in todo:
+            result = results_by_run_id[call.run_id]
+            (raw_dir / f"{call.run_id}.json").write_text(
+                json.dumps(result, indent=2) + "\n"
+            )
+            label_map["assignments"][call.run_id] = {
+                "cell": call.cell,
+                "model": call.model,
+                "prompt_id": call.prompt_id,
+                "run_index": call.run_index,
+            }
+            print(
+                f"  {call.run_id}: {result['stop_reason']}, "
+                f"{len(result['tool_uses'])} tool_use block(s)"
+            )
+
+    label_map["sealed_at"] = datetime.now(UTC).isoformat()
     label_map_path.write_text(json.dumps(label_map, indent=2) + "\n")
     print(f"Wrote {len(todo)} raw result file(s) to {raw_dir}, sealed {label_map_path}")
 
