@@ -1,0 +1,6 @@
+{
+  "sealed_at": null,
+  "experiment": "clouatre-labs/clouatre.ca#705",
+  "note": "Generated and sealed by recipe/harness.py at the start of the full 320-call run. Not consulted during scoring -- joined in only for the post-scoring Mann-Whitney analysis. Empty until that run executes.",
+  "assignments": {}
+}

@@ -1,0 +1,103 @@
+{
+  "_cell": "B",
+  "_label": "rich description, sparse param docs",
+  "_source": "Constructed: tool description = Cell A's constructed rich description (unchanged). Param docs sparsified (constructed minimal one-liners, not historical text) for match_mode/follow_depth/impl_only/import_lookup/def_use/summary/git_ref. path/symbol/cursor/page_size/max_depth unchanged (not part of the rich/sparse axis).",
+  "tool": {
+    "name": "analyze_symbol",
+    "description": "Build call graph for a named function or method across all files in a directory to trace a specific function's usage. Returns direct callers and callees. Default symbol lookup is case-sensitive exact-match (match_mode=exact); myFunc and myfunc are different symbols. If exact match fails, retry with match_mode=insensitive for a case-insensitive search. To list candidates matching a prefix, use match_mode=prefix. To find symbols containing a substring, use match_mode=contains. When prefix or contains matches multiple symbols, an error is returned listing all candidates so you can refine to a single match. follow_depth warning: each increment can multiply output size exponentially; use follow_depth=1 for production use; follow_depth=2+ only for targeted deep dives; hard cap of 3, values above 3 return INVALID_PARAMS. impl_only=true: restrict callers to only those from 'impl Trait for Type' blocks (Rust only); returns INVALID_PARAMS for non-Rust directories; emits a FILTER header showing how many callers were retained. import_lookup=true: instead of a call graph, find all files importing the module path given in symbol (e.g., std::collections); requires a non-empty symbol; mutually exclusive with def_use and normal call-graph lookup \u2014 when set, follow_depth, impl_only, and match_mode are ignored. def_use=true: instead of a call graph, extract write/read sites for the symbol; mutually exclusive with import_lookup. summary and cursor are mutually exclusive; passing both returns an error. git_ref restricts analysis to files changed relative to a git ref. Example queries: Find all callers of the parse_config function; Trace the call chain for MyClass.process_request up to 2 levels deep; Show only trait impl callers of the write method; Find every file that imports std::collections; Show all write/read sites for the API_KEY constant.",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string",
+          "description": "Directory path to search for the symbol"
+        },
+        "symbol": {
+          "type": "string",
+          "description": "Symbol name to build call graph for (function or method). Example: `parse_config` finds all callers and callees of that function."
+        },
+        "match_mode": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "exact",
+            "insensitive",
+            "prefix",
+            "contains"
+          ],
+          "default": "exact",
+          "description": "Symbol matching mode."
+        },
+        "follow_depth": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 3,
+          "description": "Call graph traversal depth."
+        },
+        "max_depth": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "description": "Maximum directory traversal depth. Unset means unlimited. Use 2-3 for large monorepos."
+        },
+        "cursor": {
+          "type": "string",
+          "description": "Pagination cursor from a previous response's next_cursor field. Pass unchanged to retrieve the next page. Omit on the first call."
+        },
+        "page_size": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "Files per page for pagination (default: 100). Reduce below 100 to limit response size; increase above 100 to reduce round trips."
+        },
+        "summary": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "Compact summary output."
+        },
+        "impl_only": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "default": false,
+          "description": "Restrict callers to Rust trait impl blocks."
+        },
+        "import_lookup": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "default": false,
+          "description": "Find files importing a module path."
+        },
+        "git_ref": {
+          "type": "string",
+          "description": "Restrict to files changed since this git ref."
+        },
+        "def_use": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "default": false,
+          "description": "Extract write/read sites for the symbol."
+        }
+      },
+      "required": [
+        "path",
+        "symbol"
+      ]
+    }
+  }
+}
