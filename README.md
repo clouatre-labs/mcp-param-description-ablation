@@ -41,7 +41,12 @@ uv run recipe/harness.py --experiment experiments/exp1-analyze-symbol --confirm-
 ```
 
 `ANTHROPIC_API_KEY` must be set in the environment for `--smoke-test` and
-`--confirm-full-run`.
+`--confirm-full-run`. `OPENROUTER_API_KEY` is a credentialed alternative
+(`ANTHROPIC_API_KEY` still takes priority if both are set): OpenRouter's `/v1/messages`
+route returns the native, first-party Anthropic Messages API response shape, not an
+OpenAI-format translation, so results are not a calling-path confound. Under OpenRouter,
+`--confirm-full-run` uses OpenRouter's async Batch API, which has only a 24-hour
+completion window -- results are not immediate.
 
 ## License
 
