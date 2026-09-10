@@ -230,6 +230,32 @@ def poll_openrouter_batch(http_client, api_key: str, batch_id: str) -> dict:
     )
 
 
+def run_calls_sync(
+    provider: str,
+    client,
+    api_key: str,
+    todo: list[Call],
+    raw_dir: Path,
+    label_map: dict | None = None,
+) -> None:
+    for call in todo:
+        result = execute_call(provider, client, call, api_key)
+        (raw_dir / f"{call.run_id}.json").write_text(
+            json.dumps(result, indent=2) + "\n"
+        )
+        if label_map is not None:
+            label_map["assignments"][call.run_id] = {
+                "cell": call.cell,
+                "model": call.model,
+                "prompt_id": call.prompt_id,
+                "run_index": call.run_index,
+            }
+        print(
+            f"  {call.run_id}: {result['stop_reason']}, "
+            f"{len(result['tool_uses'])} tool_use block(s)"
+        )
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--experiment", required=True, type=Path)
@@ -244,6 +270,19 @@ def main() -> None:
         "--confirm-full-run",
         action="store_true",
         help="Send all 320 calls. Costs real money. Requires explicit user go-ahead.",
+    )
+    mode.add_argument(
+        "--pilot",
+        action="store_true",
+        help="Send exactly 8 real calls (one per cell/model pair) synchronously to "
+        "raw/pilot/, outside the sealed run.",
+    )
+    parser.add_argument(
+        "--sync",
+        action="store_true",
+        help="Force the synchronous per-call path for --confirm-full-run under "
+        "provider=openrouter, bypassing the batch API. No-op for provider=anthropic "
+        "(already synchronous) and for other modes.",
     )
     args = parser.parse_args()
 
@@ -283,6 +322,8 @@ def main() -> None:
         import anthropic  # deferred: only needed for real API calls
 
         client = anthropic.Anthropic()
+        if args.sync:
+            print("--sync has no effect for provider=anthropic (already synchronous)")
     else:
         import httpx  # deferred: only needed for real API calls
 
@@ -295,17 +336,26 @@ def main() -> None:
         # be mistaken for (or pollute) the sealed experimental record.
         raw_dir = exp_dir / "raw" / "smoke-test"
         raw_dir.mkdir(parents=True, exist_ok=True)
-        for call in todo:
-            result = execute_call(provider, client, call, api_key)
-            (raw_dir / f"{call.run_id}.json").write_text(
-                json.dumps(result, indent=2) + "\n"
-            )
-            print(
-                f"  {call.run_id}: {result['stop_reason']}, "
-                f"{len(result['tool_uses'])} tool_use block(s)"
-            )
+        run_calls_sync(provider, client, api_key, todo, raw_dir, label_map=None)
         print(
             f"Smoke test: wrote {len(todo)} result(s) to {raw_dir} (not part of the sealed run)"
+        )
+        return
+
+    if args.pilot:
+        # Pilot output is scratch, kept out of raw/ and label-map.json, same rationale as
+        # smoke-test: one call per (cell, model) pair to sanity-check the full grid's
+        # coverage without touching the sealed experimental record.
+        pilot_by_cell_model: dict[tuple[str, str], Call] = {}
+        for call in calls:
+            pilot_by_cell_model.setdefault((call.cell, call.model), call)
+        pilot_calls = list(pilot_by_cell_model.values())
+        raw_dir = exp_dir / "raw" / "pilot"
+        raw_dir.mkdir(parents=True, exist_ok=True)
+        run_calls_sync(provider, client, api_key, pilot_calls, raw_dir, label_map=None)
+        print(
+            f"Pilot: wrote {len(pilot_calls)} result(s) to {raw_dir} "
+            f"(not part of the sealed run)"
         )
         return
 
@@ -317,22 +367,8 @@ def main() -> None:
     label_map_path = exp_dir / "label-map.json"
     label_map = json.loads(label_map_path.read_text())
 
-    if provider == "anthropic":
-        for call in todo:
-            result = execute_call(provider, client, call, api_key)
-            (raw_dir / f"{call.run_id}.json").write_text(
-                json.dumps(result, indent=2) + "\n"
-            )
-            label_map["assignments"][call.run_id] = {
-                "cell": call.cell,
-                "model": call.model,
-                "prompt_id": call.prompt_id,
-                "run_index": call.run_index,
-            }
-            print(
-                f"  {call.run_id}: {result['stop_reason']}, "
-                f"{len(result['tool_uses'])} tool_use block(s)"
-            )
+    if provider == "anthropic" or args.sync:
+        run_calls_sync(provider, client, api_key, todo, raw_dir, label_map)
     else:
         # Async Batch API: OpenRouter rejects a batch whose request bodies' model fields
         # don't all match the top-level model field (HTTP 400), so submit one batch per
