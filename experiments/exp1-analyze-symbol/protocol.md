@@ -74,5 +74,9 @@ Run mechanics: the harness accepts either `ANTHROPIC_API_KEY` or `OPENROUTER_API
 (`ANTHROPIC_API_KEY` takes priority if both are set). OpenRouter's `/v1/messages` route
 returns the native, first-party Anthropic Messages API response shape, not an OpenAI-format
 translation, so it does not introduce a calling-path confound. Under OpenRouter,
-`--confirm-full-run` submits via OpenRouter's async Batch API, which has only a 24-hour
-completion window -- results are not immediate.
+`--confirm-full-run` defaults to submitting via OpenRouter's async Batch API; the
+documented 24-hour completion window is a ceiling, not an estimate -- for this run's size
+(~160 requests/model) typical completion is well under an hour. `--sync` forces the
+synchronous per-call path instead (no-op under `ANTHROPIC_API_KEY`, already synchronous).
+`--pilot` runs one call per (cell, model) pair (8 calls total) synchronously to
+`raw/pilot/`, outside the sealed run, as a pre-run sanity check.

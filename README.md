@@ -37,16 +37,23 @@ this repo's structural template.
 ```sh
 uv run recipe/harness.py --experiment experiments/exp1-analyze-symbol --dry-run
 uv run recipe/harness.py --experiment experiments/exp1-analyze-symbol --smoke-test
+uv run recipe/harness.py --experiment experiments/exp1-analyze-symbol --pilot
 uv run recipe/harness.py --experiment experiments/exp1-analyze-symbol --confirm-full-run
 ```
 
-`ANTHROPIC_API_KEY` must be set in the environment for `--smoke-test` and
+`ANTHROPIC_API_KEY` must be set in the environment for `--smoke-test`, `--pilot`, and
 `--confirm-full-run`. `OPENROUTER_API_KEY` is a credentialed alternative
 (`ANTHROPIC_API_KEY` still takes priority if both are set): OpenRouter's `/v1/messages`
 route returns the native, first-party Anthropic Messages API response shape, not an
 OpenAI-format translation, so results are not a calling-path confound. Under OpenRouter,
-`--confirm-full-run` uses OpenRouter's async Batch API, which has only a 24-hour
-completion window -- results are not immediate.
+`--confirm-full-run` defaults to OpenRouter's async Batch API; the 24-hour window
+documented by OpenRouter is a ceiling, not an estimate -- for this run's size
+(~160 requests/model) typical completion is well under an hour. Pass `--sync` to
+`--confirm-full-run` to force the synchronous per-call path instead of the batch API
+(useful when the batch API is unavailable or undesirable); `--sync` is a no-op under
+`ANTHROPIC_API_KEY`, which is already synchronous. `--pilot` runs exactly one call per
+(cell, model) pair (8 calls) synchronously to `raw/pilot/`, outside the sealed run, as a
+cheap sanity check of the full grid before committing to `--confirm-full-run`.
 
 ## License
 
