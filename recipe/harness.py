@@ -39,6 +39,8 @@ OPENROUTER_MESSAGES_URL = "https://openrouter.ai/api/v1/messages"
 OPENROUTER_BATCHES_URL = "https://openrouter.ai/api/beta/batches"
 OPENROUTER_BATCH_TERMINAL_STATUSES = {"completed", "failed", "expired", "cancelled"}
 OPENROUTER_BATCH_POLL_SECONDS = 5
+# 1h margin over OpenRouter's documented 24h completion window (see README.md).
+OPENROUTER_BATCH_MAX_WAIT_SECONDS = 25 * 60 * 60
 
 
 @dataclass
@@ -212,13 +214,20 @@ def submit_openrouter_batch(
 
 def poll_openrouter_batch(http_client, api_key: str, batch_id: str) -> dict:
     url = f"{OPENROUTER_BATCHES_URL}/{batch_id}"
-    while True:
+    elapsed = 0
+    while elapsed <= OPENROUTER_BATCH_MAX_WAIT_SECONDS:
         response = http_client.get(url, headers={"Authorization": f"Bearer {api_key}"})
         response.raise_for_status()
         batch = response.json()
         if batch["status"] in OPENROUTER_BATCH_TERMINAL_STATUSES:
             return batch
         sleep(OPENROUTER_BATCH_POLL_SECONDS)
+        elapsed += OPENROUTER_BATCH_POLL_SECONDS
+    raise TimeoutError(
+        f"Batch {batch_id} did not reach a terminal status within "
+        f"{OPENROUTER_BATCH_MAX_WAIT_SECONDS}s. It may still be running -- check "
+        f"GET {OPENROUTER_BATCHES_URL}/{batch_id} directly."
+    )
 
 
 def main() -> None:
@@ -336,6 +345,11 @@ def main() -> None:
         for model, model_calls in calls_by_model.items():
             model_slug = OPENROUTER_MODEL_SLUGS[model]
             batch_id = submit_openrouter_batch(client, api_key, model_slug, model_calls)
+            # Logged before polling so the ID survives a network interruption during the
+            # 24h window -- the batch keeps running server-side and can be checked manually.
+            print(
+                f"  submitted batch {batch_id} for {model} ({len(model_calls)} calls)"
+            )
             batch = poll_openrouter_batch(client, api_key, batch_id)
             for item in batch["results"]:
                 if item.get("error"):
