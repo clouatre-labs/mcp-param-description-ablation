@@ -1,0 +1,36 @@
+# PR Review Instructions
+
+## Grounding rules
+
+- Only flag issues you can cite directly from the diff. If you cannot point to a specific line,
+  do not raise the comment.
+- If you are unsure whether something is a bug or intentional, say so explicitly rather than
+  asserting it is wrong.
+- Do not apply general knowledge about a language or framework if the diff does not contain
+  evidence of a violation. If project conventions are documented in `README.md` or
+  `experiments/*/protocol.md`, cite that file when referencing a rule.
+
+## Scope
+
+Review only what the PR changes. Do not flag issues in files the PR does not touch.
+
+## Workflow files (.github/workflows/)
+
+- Flag `${{ expression }}` interpolation directly inside `run:` scripts as an injection risk;
+  inputs should be passed via `env:` blocks.
+- Verify action pins use commit SHAs, not mutable tags.
+- Check that `permissions:` blocks are present and minimal.
+
+## Source code (Python)
+
+- Do not flag missing type hints or formatting that `ruff format`/`ruff check` would catch;
+  those are enforced by CI, not review.
+- Do not suggest adding dependencies without a justification visible in the diff.
+- Flag hardcoded experiment identifiers (cell/model/prompt names) introduced outside
+  `label-map.json` — this repo's blinding relies on opaque `run_id`s staying opaque.
+
+## General
+
+- One comment per distinct issue; do not duplicate findings across multiple inline comments.
+- Prefer a suggestion block over describing the problem when the fix is unambiguous.
+- If you have no findings, say so. Do not invent issues to appear thorough.
