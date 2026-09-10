@@ -1,0 +1,71 @@
+{
+  "_cell": "C",
+  "_label": "lean description, rich param docs (target)",
+  "_source": "literal current production, aptu-coder v0.32.5 (commit 21a875b) -- crates/aptu-coder/src/lib.rs description, crates/aptu-coder-core/src/types.rs param docs, verified byte-for-byte 2026-09-10",
+  "tool": {
+    "name": "analyze_symbol",
+    "description": "Call graph for a named symbol across all files in a directory. Prefer over analyze_file when the question is \"who calls X\" or \"what does X call\" rather than \"what is in this file\". Modes: call graph (default), import_lookup (files importing a module path), def_use (write/read sites). Fails if file path supplied; fails if impl_only=true on non-Rust directory; fails if summary=true and cursor. match_mode controls name matching; git_ref restricts to changed files.",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string",
+          "description": "Directory path to search for the symbol"
+        },
+        "symbol": {
+          "type": "string",
+          "description": "Symbol name to build call graph for (function or method). Example: `parse_config` finds all callers and callees of that function."
+        },
+        "match_mode": {
+          "type": ["string", "null"],
+          "enum": ["exact", "insensitive", "prefix", "contains"],
+          "default": "exact",
+          "description": "Symbol matching mode (default: exact). exact: case-sensitive exact match. insensitive: case-insensitive exact match. prefix: case-insensitive prefix match. contains: case-insensitive substring match."
+        },
+        "follow_depth": {
+          "type": ["integer", "null"],
+          "minimum": 0,
+          "maximum": 3,
+          "description": "Call graph traversal depth for this tool (default 1). Level 1 = direct callers and callees; level 2 = one more hop, etc. Output size grows exponentially with graph branching. Warn user on levels above 2. Hard cap of 3."
+        },
+        "max_depth": {
+          "type": ["integer", "null"],
+          "minimum": 0,
+          "description": "Maximum directory traversal depth. Unset means unlimited. Use 2-3 for large monorepos."
+        },
+        "cursor": {
+          "type": "string",
+          "description": "Pagination cursor from a previous response's next_cursor field. Pass unchanged to retrieve the next page. Omit on the first call."
+        },
+        "page_size": {
+          "type": ["integer", "null"],
+          "description": "Files per page for pagination (default: 100). Reduce below 100 to limit response size; increase above 100 to reduce round trips."
+        },
+        "summary": {
+          "type": ["boolean", "null"],
+          "description": "true = compact summary (totals plus directory tree, no per-file function lists); false = full output; unset = auto-summarize when output exceeds 50K chars. Mutually exclusive with cursor; passing both returns INVALID_PARAMS."
+        },
+        "impl_only": {
+          "type": ["boolean", "null"],
+          "default": false,
+          "description": "Filter callers to impl Trait for Type blocks only. Rust only; returns INVALID_PARAMS for other languages."
+        },
+        "import_lookup": {
+          "type": ["boolean", "null"],
+          "default": false,
+          "description": "Find all files in the directory that import the module path given in symbol (e.g., std::collections). Requires symbol to be non-empty. Mutually exclusive with def_use and normal call-graph lookup. When set, follow_depth, impl_only, and match_mode are ignored."
+        },
+        "git_ref": {
+          "type": "string",
+          "description": "Restrict analysis to files changed relative to this git ref (branch, tag, or commit SHA). Empty string or unset means no filtering. Example: \"main\" or \"HEAD~1\"."
+        },
+        "def_use": {
+          "type": ["boolean", "null"],
+          "default": false,
+          "description": "Extract write/read sites for the symbol. First call returns empty def_use_sites and a cursor; paginate with that cursor to retrieve results. Mutually exclusive with import_lookup. Default: false."
+        }
+      },
+      "required": ["path", "symbol"]
+    }
+  }
+}

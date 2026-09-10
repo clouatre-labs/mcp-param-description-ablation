@@ -1,0 +1,103 @@
+{
+  "_cell": "D",
+  "_label": "lean description, sparse param docs (worst case)",
+  "_source": "Constructed: tool description = Cell C's literal current-production lean description (unchanged). Param docs sparsified (constructed minimal one-liners, not historical text) for match_mode/follow_depth/impl_only/import_lookup/def_use/summary/git_ref. path/symbol/cursor/page_size/max_depth unchanged (not part of the rich/sparse axis).",
+  "tool": {
+    "name": "analyze_symbol",
+    "description": "Call graph for a named symbol across all files in a directory. Prefer over analyze_file when the question is \"who calls X\" or \"what does X call\" rather than \"what is in this file\". Modes: call graph (default), import_lookup (files importing a module path), def_use (write/read sites). Fails if file path supplied; fails if impl_only=true on non-Rust directory; fails if summary=true and cursor. match_mode controls name matching; git_ref restricts to changed files.",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string",
+          "description": "Directory path to search for the symbol"
+        },
+        "symbol": {
+          "type": "string",
+          "description": "Symbol name to build call graph for (function or method). Example: `parse_config` finds all callers and callees of that function."
+        },
+        "match_mode": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "exact",
+            "insensitive",
+            "prefix",
+            "contains"
+          ],
+          "default": "exact",
+          "description": "Symbol matching mode."
+        },
+        "follow_depth": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 3,
+          "description": "Call graph traversal depth."
+        },
+        "max_depth": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "description": "Maximum directory traversal depth. Unset means unlimited. Use 2-3 for large monorepos."
+        },
+        "cursor": {
+          "type": "string",
+          "description": "Pagination cursor from a previous response's next_cursor field. Pass unchanged to retrieve the next page. Omit on the first call."
+        },
+        "page_size": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "Files per page for pagination (default: 100). Reduce below 100 to limit response size; increase above 100 to reduce round trips."
+        },
+        "summary": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "Compact summary output."
+        },
+        "impl_only": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "default": false,
+          "description": "Restrict callers to Rust trait impl blocks."
+        },
+        "import_lookup": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "default": false,
+          "description": "Find files importing a module path."
+        },
+        "git_ref": {
+          "type": "string",
+          "description": "Restrict to files changed since this git ref."
+        },
+        "def_use": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "default": false,
+          "description": "Extract write/read sites for the symbol."
+        }
+      },
+      "required": [
+        "path",
+        "symbol"
+      ]
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "_source": "aptu-coder v0.32.5 (commit 21a875b), crates/aptu-coder/src/lib.rs + crates/aptu-coder-core/src/types.rs, verified byte-for-byte 2026-09-10",
+  "_note": "Selection-accuracy distractors present in every cell's tools array alongside the analyze_symbol variant under test. Constant across all 4 cells.",
+  "tools": [
+    {
+      "name": "analyze_directory",
+      "description": "Tree-view of directory with LOC, function/class counts, test markers. Respects .gitignore. Paginates with next_cursor. Default max_depth=3. Large dirs (1000+ files) auto-compact to summary; pass summary=false for per-file list. git_ref restricts to files changed since a branch/tag/commit. Empty directories return zero counts.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "description": "Directory path to analyze"
+          },
+          "max_depth": {
+            "type": ["integer", "null"],
+            "minimum": 0,
+            "description": "Maximum directory traversal depth for overview mode only. Default: 3. Pass 0 for unlimited depth. Use 1-3 for large monorepos to manage output size. Ignored in other modes."
+          },
+          "git_ref": {
+            "type": "string",
+            "description": "Restrict analysis to files changed relative to this git ref (branch, tag, or commit SHA). Empty string or unset means no filtering."
+          },
+          "cursor": {
+            "type": "string",
+            "description": "Pagination cursor from a previous response's next_cursor field. Pass unchanged to retrieve the next page. Omit on the first call."
+          },
+          "page_size": {
+            "type": ["integer", "null"],
+            "description": "Files per page for pagination (default: 100). Reduce below 100 to limit response size; increase above 100 to reduce round trips."
+          },
+          "summary": {
+            "type": ["boolean", "null"],
+            "description": "true = compact summary (totals plus directory tree, no per-file function lists); false = full output; unset = auto-summarize when output exceeds 50K chars. Mutually exclusive with cursor; passing both returns INVALID_PARAMS."
+          }
+        },
+        "required": ["path"]
+      }
+    },
+    {
+      "name": "analyze_file",
+      "description": "Functions, types, classes, and imports from a single source file. Fails if directory path supplied; use analyze_directory instead. Paginates with cursor/page_size; use fields=[\"functions\",\"classes\",\"imports\"] to limit sections. git_ref not supported. Use analyze_module for a lightweight function/import index (~75% smaller). Supported: Astro, C/C++, C#, CSS, Fortran, Go, HTML, Java, JavaScript, JSON, Kotlin, Markdown, Python, Rust, TOML, TSX, TypeScript, YAML.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "description": "File path to analyze"
+          },
+          "fields": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": ["functions", "classes", "imports", "all"]
+            },
+            "description": "Limit output to specific sections. Valid values: \"functions\", \"classes\", \"imports\", \"all\". The FILE header (path, line count, section counts) is always emitted regardless. Omitting this field returns all sections. Ignored when summary=true (summary takes precedence)."
+          },
+          "cursor": {
+            "type": "string",
+            "description": "Pagination cursor from a previous response's next_cursor field. Pass unchanged to retrieve the next page. Omit on the first call."
+          },
+          "page_size": {
+            "type": ["integer", "null"],
+            "description": "Files per page for pagination (default: 100). Reduce below 100 to limit response size; increase above 100 to reduce round trips."
+          },
+          "summary": {
+            "type": ["boolean", "null"],
+            "description": "true = compact summary (totals plus directory tree, no per-file function lists); false = full output; unset = auto-summarize when output exceeds 50K chars. Mutually exclusive with cursor; passing both returns INVALID_PARAMS."
+          }
+        },
+        "required": ["path"]
+      }
+    }
+  ]
+}
