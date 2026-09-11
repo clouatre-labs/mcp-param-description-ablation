@@ -1,0 +1,76 @@
+{
+  "primary_test": {
+    "claude-haiku-4-5-20251001": {
+      "U": 720.0,
+      "p": 0.3716580278116107,
+      "r": 0.09999999999999998,
+      "n_C": 40,
+      "n_A": 40
+    },
+    "claude-sonnet-5": {
+      "U": 820.0,
+      "p": 0.5685554488748059,
+      "r": -0.02499999999999991,
+      "n_C": 40,
+      "n_A": 40
+    }
+  },
+  "exploratory": {
+    "b": {
+      "claude-sonnet-5": {
+        "n": 40,
+        "mean_param_fill_score": 0.95,
+        "tool_selection_accuracy": 0.975,
+        "mean_input_tokens": 2911.125
+      },
+      "claude-haiku-4-5-20251001": {
+        "n": 40,
+        "mean_param_fill_score": 0.575,
+        "tool_selection_accuracy": 0.6,
+        "mean_input_tokens": 2337.0
+      }
+    },
+    "d": {
+      "claude-haiku-4-5-20251001": {
+        "n": 40,
+        "mean_param_fill_score": 0.475,
+        "tool_selection_accuracy": 0.6,
+        "mean_input_tokens": 2011.0
+      },
+      "claude-sonnet-5": {
+        "n": 40,
+        "mean_param_fill_score": 0.825,
+        "tool_selection_accuracy": 0.975,
+        "mean_input_tokens": 2452.125
+      }
+    },
+    "c": {
+      "claude-haiku-4-5-20251001": {
+        "n": 40,
+        "mean_param_fill_score": 0.525,
+        "tool_selection_accuracy": 0.575,
+        "mean_input_tokens": 2299.0
+      },
+      "claude-sonnet-5": {
+        "n": 40,
+        "mean_param_fill_score": 0.975,
+        "tool_selection_accuracy": 0.975,
+        "mean_input_tokens": 2860.125
+      }
+    },
+    "a": {
+      "claude-sonnet-5": {
+        "n": 40,
+        "mean_param_fill_score": 0.95,
+        "tool_selection_accuracy": 0.95,
+        "mean_input_tokens": 3319.125
+      },
+      "claude-haiku-4-5-20251001": {
+        "n": 40,
+        "mean_param_fill_score": 0.625,
+        "tool_selection_accuracy": 0.575,
+        "mean_input_tokens": 2625.0
+      }
+    }
+  }
+}
