@@ -17,8 +17,12 @@ against. Ground truth is cell-invariant.
 Full expected-value JSON and `incorrect_if` conditions: `prompts.json`.
 
 Scoring per non-trivial param: `correct` / `incorrect` / `omitted` / `hallucinated-default`.
-`match_mode` and `follow_depth` are always separate sub-scores, never pooled into one
-param-fill score (they fail by different mechanisms).
+No single prompt scores both `match_mode` and `follow_depth` together, so those two never
+share a pooled score. Prompts that test more than one parameter at once (P5/P6, mutual
+exclusion: `import_lookup`/`match_mode`/`def_use`) do pool their per-parameter checks into one
+binary `param_fill_score` per call; a call with 2 of 3 checks correct scores 0. This is a known
+resolution limitation of the primary metric, not an error: it means the primary test cannot
+distinguish "completely wrong" from "mostly right" on multi-parameter prompts.
 
 Secondary metric (all 8 prompts): tool-selection accuracy against `analyze_directory` /
 `analyze_file` distractors (`fixtures/distractors.json`).

@@ -3,7 +3,7 @@
 Loads the frozen fixtures and prompts for an experiment directory, builds the Anthropic
 Messages API tools array per cell, and runs the full cells x models x prompts x runs grid.
 
-Run IDs are opaque (run_0001, run_0002, ...) and carry no cell/model/prompt information --
+Run IDs are opaque (run_0001, run_0002, ...) and carry no cell/model/prompt information;
 that mapping lives only in label-map.json, sealed at the start of the run and not consulted
 until scoring is done, so a scorer reading raw/<run_id>.json cannot infer which cell produced
 a given call.
@@ -231,7 +231,7 @@ def poll_openrouter_batch(http_client, api_key: str, batch_id: str) -> dict:
         elapsed += OPENROUTER_BATCH_POLL_SECONDS
     raise TimeoutError(
         f"Batch {batch_id} did not reach a terminal status within "
-        f"{OPENROUTER_BATCH_MAX_WAIT_SECONDS}s. It may still be running -- check "
+        f"{OPENROUTER_BATCH_MAX_WAIT_SECONDS}s. It may still be running; check "
         f"GET {OPENROUTER_BATCHES_URL}/{batch_id} directly."
     )
 
@@ -388,7 +388,7 @@ def main() -> None:
             model_slug = OPENROUTER_MODEL_SLUGS[model]
             batch_id = submit_openrouter_batch(client, api_key, model_slug, model_calls)
             # Logged before polling so the ID survives a network interruption during the
-            # 24h window -- the batch keeps running server-side and can be checked manually.
+            # 24h window; the batch keeps running server-side and can be checked manually.
             print(
                 f"  submitted batch {batch_id} for {model} ({len(model_calls)} calls)"
             )

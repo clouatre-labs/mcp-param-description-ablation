@@ -30,7 +30,7 @@ value (they fail by different mechanisms).
 ## Categorical scoring (P5-P8: mutual exclusion / should-not-set)
 
 P5/P6 (`import_lookup=true` expected) and P7/P8 (should-not-set optional flags) use a
-correct/incorrect-only bucket -- no omitted/hallucinated-default distinction, since these
+correct/incorrect-only bucket; no omitted/hallucinated-default distinction, since these
 prompts test whether a param was left alone, not what value it took.
 
 - P5/P6: correct iff `import_lookup == true` AND none of the prompt's `incorrect_if` params
