@@ -1,4 +1,4 @@
-"""Experiment harness for the MCP parameter-description ablation (clouatre-labs/clouatre.ca#705).
+"""Experiment harness for the MCP parameter-description ablation.
 
 Loads the frozen fixtures and prompts for an experiment directory, builds the Anthropic
 Messages API tools array per cell, and runs the full cells x models x prompts x runs grid.

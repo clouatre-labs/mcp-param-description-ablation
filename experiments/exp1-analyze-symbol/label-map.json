@@ -1,6 +1,6 @@
 {
   "sealed_at": "2026-09-10T17:19:44.108351+00:00",
-  "experiment": "clouatre-labs/clouatre.ca#705",
+  "experiment": "mcp-param-description-ablation/exp1-analyze-symbol",
   "note": "Generated and sealed by recipe/harness.py at the start of the full 320-call run. Not consulted during scoring -- joined in only for the post-scoring Mann-Whitney analysis. Empty until that run executes.",
   "assignments": {
     "run_045554": {

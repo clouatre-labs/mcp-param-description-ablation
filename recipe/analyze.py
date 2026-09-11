@@ -1,4 +1,4 @@
-"""Statistical analysis for exp1-analyze-symbol (clouatre-labs/clouatre.ca#705).
+"""Statistical analysis for exp1-analyze-symbol.
 
 Joins `scores.json` (blind, no cell/model) with the full `label-map.json` assignments to
 attach cell/model, then runs the pre-registered primary test -- one omnibus Mann-Whitney U

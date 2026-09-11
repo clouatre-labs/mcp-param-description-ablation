@@ -25,7 +25,7 @@ Applies to the single non-trivial param each of these prompts targets. Schema de
 - **incorrect**: any other explicit wrong value.
 
 `match_mode` and `follow_depth` are always separate sub-scores per run, never pooled into one
-value (they fail by different mechanisms -- issue #705 requirement).
+value (they fail by different mechanisms).
 
 ## Categorical scoring (P5-P8: mutual exclusion / should-not-set)
 

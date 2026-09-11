@@ -1,10 +1,18 @@
+<div align="center">
+
 # MCP Parameter-Description Ablation
+
+[![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+[![Result](https://img.shields.io/badge/result-null-lightgrey)](experiments/exp1-analyze-symbol/analysis.json)
 
 Does moving parameter-level detail out of an MCP tool's description string and into
 `inputSchema.properties[*].description` regress parameter-filling accuracy -- especially for
 smaller models?
 
-Supplementary data repository for clouatre-labs/clouatre.ca#705. Companion blog post: TBD.
+Supplementary data repository for an MCP parameter-description ablation experiment. Companion
+blog post: TBD.
+
+</div>
 
 ## Status
 
@@ -14,6 +22,9 @@ was blind-scored (`recipe/scorer.py`, `recipe/analyze.py`; see
 pre-registered primary test -- Mann-Whitney U, cell C (lean tool description, current
 production text) vs cell A (rich tool description, constructed pre-#593-style baseline),
 param-fill score, two-tailed alpha=0.05, per model -- found no significant difference:
+
+*Table 1: Mann-Whitney U results per model, primary comparison (cell C, lean description, vs
+cell A, rich description), param-fill score, two-tailed alpha=0.05, n=40 per cell.*
 
 | Model | U | p | r | n/cell |
 |---|---|---|---|---|
@@ -26,15 +37,38 @@ Exploratory data (cells B/D, tool-selection accuracy, serialized tools-list toke
 [`experiments/exp1-analyze-symbol/analysis.json`](experiments/exp1-analyze-symbol/analysis.json).
 
 One documented gap: the `hallucinated-default` score category has no formal definition in
-`protocol.md`/`rubric.md`/issue #705; the operational definition used by the scorer is
-documented in
+`protocol.md`/`rubric.md`; the operational definition used by the scorer is documented in
 [`experiments/exp1-analyze-symbol/scorer-prompt.md`](experiments/exp1-analyze-symbol/scorer-prompt.md).
 
 This matches the pre-registration discipline of
 [`clouatre-labs/prompt-repetition-experiments`](https://github.com/clouatre-labs/prompt-repetition-experiments),
 this repo's structural template.
 
+## Pipeline
+
+```mermaid
+graph TD
+    Fixtures[Fixtures] --> Harness[Harness]
+    Harness --> Raw[Raw Results]
+    Harness --> LabelMap[Label Map]
+    Raw --> Scorer[Scorer]
+    Prompts[Prompts] --> Scorer
+    Scorer --> Scores[Scores]
+    Scores --> Analyze[Analyze]
+    LabelMap --> Analyze
+    Analyze --> Analysis[Analysis]
+```
+
+*Figure 1: Run pipeline. The harness (`recipe/harness.py`) writes blind per-call results to
+`raw/<run_id>.json` and separately seals `label-map.json`. The scorer (`recipe/scorer.py`)
+reads only `raw/` and `prompts.json` and never `label-map.json`, writing `scores.json`. The
+analyze step (`recipe/analyze.py`) is the first stage to join `scores.json` with
+`label-map.json`, producing `analysis.json` and the results table above.*
+
 ## Structure
+
+See [`docs/architecture.md`](docs/architecture.md) for the full 2x2 design and the
+blinding-boundary diagram.
 
 - `recipe/harness.py` -- calls the Anthropic Messages API for every (cell, model, prompt,
   run) combination, writes anonymized `run_id` results to `raw/`, seals `label-map.json`.

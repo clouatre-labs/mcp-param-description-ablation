@@ -1,5 +1,5 @@
 {
-  "_note": "8 frozen prompts + pre-registered expected-JSON rubric for exp1-analyze-symbol. Ground truth is cell-invariant: cells differ only in what the model can see, not in what 'correct' means. Scored correct/incorrect/omitted/hallucinated-default per non-trivial param. match_mode and follow_depth are separate sub-scores, never pooled (issue #705 requirement).",
+  "_note": "8 frozen prompts + pre-registered expected-JSON rubric for exp1-analyze-symbol. Ground truth is cell-invariant: cells differ only in what the model can see, not in what 'correct' means. Scored correct/incorrect/omitted/hallucinated-default per non-trivial param. match_mode and follow_depth are separate sub-scores, never pooled (they fail by different mechanisms).",
   "distractor_tools": ["analyze_directory", "analyze_file"],
   "prompts": [
     {

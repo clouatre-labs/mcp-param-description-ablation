@@ -1,7 +1,8 @@
 # Protocol: exp1-analyze-symbol
 
-Pre-registered design for clouatre-labs/clouatre.ca#705. Full context, related work, and
-design rationale live in the issue; this file freezes the run-time parameters.
+Pre-registered design for the MCP parameter-description ablation experiment. This file
+freezes the run-time parameters; see `rubric.md` and `scorer-prompt.md` for the full
+scoring definitions.
 
 ## Question
 
