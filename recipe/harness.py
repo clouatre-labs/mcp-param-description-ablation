@@ -217,6 +217,12 @@ def poll_openrouter_batch(http_client, api_key: str, batch_id: str) -> dict:
     elapsed = 0
     while elapsed <= OPENROUTER_BATCH_MAX_WAIT_SECONDS:
         response = http_client.get(url, headers={"Authorization": f"Bearer {api_key}"})
+        if response.status_code == 404:
+            # A batch can be briefly unqueryable right after creation (eventual
+            # consistency on OpenRouter's side); treat as not-ready rather than fatal.
+            sleep(OPENROUTER_BATCH_POLL_SECONDS)
+            elapsed += OPENROUTER_BATCH_POLL_SECONDS
+            continue
         response.raise_for_status()
         batch = response.json()
         if batch["status"] in OPENROUTER_BATCH_TERMINAL_STATUSES:
