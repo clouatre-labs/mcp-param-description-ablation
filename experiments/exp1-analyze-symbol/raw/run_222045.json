@@ -1,0 +1,18 @@
+{
+  "stop_reason": "tool_use",
+  "tool_uses": [
+    {
+      "name": "analyze_directory",
+      "input": {
+        "path": "src/handlers/"
+      }
+    }
+  ],
+  "text": [
+    "I'll analyze the handlers directory to find all functions starting with `handle_`."
+  ],
+  "usage": {
+    "input_tokens": 2019,
+    "output_tokens": 73
+  }
+}

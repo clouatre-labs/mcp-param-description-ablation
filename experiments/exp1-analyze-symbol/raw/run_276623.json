@@ -1,0 +1,18 @@
+{
+  "stop_reason": "tool_use",
+  "tool_uses": [
+    {
+      "name": "analyze_symbol",
+      "input": {
+        "path": "src/",
+        "symbol": "serde_json",
+        "import_lookup": true
+      }
+    }
+  ],
+  "text": [],
+  "usage": {
+    "input_tokens": 2854,
+    "output_tokens": 103
+  }
+}

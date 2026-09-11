@@ -1,0 +1,16 @@
+{
+  "stop_reason": "tool_use",
+  "tool_uses": [
+    {
+      "name": "analyze_directory",
+      "input": {
+        "path": "src/handlers"
+      }
+    }
+  ],
+  "text": [],
+  "usage": {
+    "input_tokens": 2633,
+    "output_tokens": 56
+  }
+}

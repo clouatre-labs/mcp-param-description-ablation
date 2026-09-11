@@ -1,0 +1,20 @@
+{
+  "stop_reason": "tool_use",
+  "tool_uses": [
+    {
+      "name": "analyze_symbol",
+      "input": {
+        "path": ".",
+        "symbol": "AuthMiddleware",
+        "follow_depth": 3
+      }
+    }
+  ],
+  "text": [
+    "I'll trace `AuthMiddleware` at the maximum depth the tool supports, which is `follow_depth=3` (the hard cap \u2014 anything above that returns INVALID_PARAMS)."
+  ],
+  "usage": {
+    "input_tokens": 3326,
+    "output_tokens": 205
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "stop_reason": "tool_use",
+  "tool_uses": [
+    {
+      "name": "analyze_symbol",
+      "input": {
+        "path": ".",
+        "symbol": "AuthMiddleware",
+        "follow_depth": 3,
+        "summary": true
+      }
+    }
+  ],
+  "text": [
+    "I'll run the call graph analysis for `AuthMiddleware` at the maximum supported depth (the API hard-caps `follow_depth` at 3).\n\n**Note:** Since you're asking for depth above 2, be aware that output size grows exponentially with graph branching \u2014 this could return a very large result if `AuthMiddleware` has many callers/callees.\n\nI need a directory path to search since it's a required parameter \u2014 I'll default to the project root (`.`). Let me kick off the deepest search now:"
+  ],
+  "usage": {
+    "input_tokens": 2867,
+    "output_tokens": 468
+  }
+}

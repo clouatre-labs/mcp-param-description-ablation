@@ -1,0 +1,20 @@
+{
+  "stop_reason": "tool_use",
+  "tool_uses": [
+    {
+      "name": "analyze_symbol",
+      "input": {
+        "path": ".",
+        "symbol": "AuthMiddleware",
+        "follow_depth": 3
+      }
+    }
+  ],
+  "text": [
+    "I'll trace `AuthMiddleware` at the maximum supported depth (3 \u2014 the hard cap; anything higher returns `INVALID_PARAMS`). Note that depth 3 can produce a very large call graph since output grows exponentially with each level, so I'll request it with summary handling left to auto (it'll auto-summarize if it exceeds the size threshold)."
+  ],
+  "usage": {
+    "input_tokens": 3326,
+    "output_tokens": 387
+  }
+}

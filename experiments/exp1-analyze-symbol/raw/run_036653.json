@@ -1,0 +1,20 @@
+{
+  "stop_reason": "tool_use",
+  "tool_uses": [
+    {
+      "name": "analyze_symbol",
+      "input": {
+        "path": ".",
+        "symbol": "AuthMiddleware",
+        "follow_depth": 3
+      }
+    }
+  ],
+  "text": [
+    "I'll run the call graph trace at `follow_depth=3`, which is the hard cap this tool supports (values above 3 are rejected as INVALID_PARAMS). Note that at this depth, output can grow exponentially depending on how connected `AuthMiddleware` is \u2014 I'll start with the root directory."
+  ],
+  "usage": {
+    "input_tokens": 3326,
+    "output_tokens": 396
+  }
+}

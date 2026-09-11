@@ -1,0 +1,19 @@
+{
+  "stop_reason": "tool_use",
+  "tool_uses": [
+    {
+      "name": "analyze_symbol",
+      "input": {
+        "path": ".",
+        "symbol": "parse_config"
+      }
+    }
+  ],
+  "text": [
+    "I'll help you find who calls `parse_config` and what it calls. First, let me search for this function in the current directory."
+  ],
+  "usage": {
+    "input_tokens": 2613,
+    "output_tokens": 102
+  }
+}

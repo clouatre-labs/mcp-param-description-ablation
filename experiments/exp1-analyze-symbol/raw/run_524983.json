@@ -1,0 +1,20 @@
+{
+  "stop_reason": "tool_use",
+  "tool_uses": [
+    {
+      "name": "analyze_symbol",
+      "input": {
+        "path": "src/",
+        "symbol": "parse_config",
+        "match_mode": "insensitive"
+      }
+    }
+  ],
+  "text": [
+    "I'll search for callers of `ParseConfig` in the `src/` directory. Since you mentioned there's no exact match for `parse_config`, I'll use case-insensitive matching to find `ParseConfig`."
+  ],
+  "usage": {
+    "input_tokens": 2349,
+    "output_tokens": 143
+  }
+}

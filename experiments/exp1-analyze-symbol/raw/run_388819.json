@@ -1,0 +1,18 @@
+{
+  "stop_reason": "tool_use",
+  "tool_uses": [
+    {
+      "name": "analyze_symbol",
+      "input": {
+        "path": ".",
+        "symbol": "run",
+        "follow_depth": 1
+      }
+    }
+  ],
+  "text": [],
+  "usage": {
+    "input_tokens": 2905,
+    "output_tokens": 122
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "stop_reason": "tool_use",
+  "tool_uses": [
+    {
+      "name": "analyze_symbol",
+      "input": {
+        "path": ".",
+        "symbol": "process_request",
+        "follow_depth": 2
+      }
+    }
+  ],
+  "text": [
+    "I'll need a directory path to search in. Since none was specified, I'll start by searching from the project root. Let me trace `process_request` with two hops of depth (direct callers/callees plus one more hop out)."
+  ],
+  "usage": {
+    "input_tokens": 2868,
+    "output_tokens": 337
+  }
+}

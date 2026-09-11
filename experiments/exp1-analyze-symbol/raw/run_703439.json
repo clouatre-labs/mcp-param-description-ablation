@@ -1,0 +1,28 @@
+{
+  "stop_reason": "tool_use",
+  "tool_uses": [
+    {
+      "name": "analyze_symbol",
+      "input": {
+        "path": "src/",
+        "symbol": "ParseConfig",
+        "match_mode": "exact"
+      }
+    },
+    {
+      "name": "analyze_symbol",
+      "input": {
+        "path": "src/",
+        "symbol": "parse_config",
+        "match_mode": "exact"
+      }
+    }
+  ],
+  "text": [
+    "I'll search for `ParseConfig` in the `src/` directory, trying different matching modes to find all callers."
+  ],
+  "usage": {
+    "input_tokens": 2637,
+    "output_tokens": 193
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "stop_reason": "end_turn",
+  "tool_uses": [],
+  "text": [
+    "I can pull the call graph for `parse_config`, but the `analyze_symbol` tool requires a directory path to search within \u2014 it can't scan the whole filesystem without one.\n\nCould you tell me which directory (or repo root) contains `parse_config`? Once I have that, I'll find:\n- **Callers**: who invokes `parse_config`\n- **Callees**: what functions `parse_config` itself calls\n\nIf you're not sure of the exact path, give me a rough guess (e.g., project root or a subfolder like `src/`), and I can run `analyze_directory` first to locate it."
+  ],
+  "usage": {
+    "input_tokens": 2437,
+    "output_tokens": 257
+  }
+}

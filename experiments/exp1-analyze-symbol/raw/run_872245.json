@@ -1,0 +1,19 @@
+{
+  "stop_reason": "tool_use",
+  "tool_uses": [
+    {
+      "name": "analyze_symbol",
+      "input": {
+        "path": "src/",
+        "symbol": "ParseConfig"
+      }
+    }
+  ],
+  "text": [
+    "I'll search for `ParseConfig` in the `src/` directory to find all callers."
+  ],
+  "usage": {
+    "input_tokens": 2311,
+    "output_tokens": 94
+  }
+}

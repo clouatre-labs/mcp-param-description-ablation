@@ -1,0 +1,21 @@
+{
+  "stop_reason": "tool_use",
+  "tool_uses": [
+    {
+      "name": "analyze_symbol",
+      "input": {
+        "path": "src",
+        "symbol": "serde_json",
+        "import_lookup": true,
+        "match_mode": "insensitive"
+      }
+    }
+  ],
+  "text": [
+    "I'll help you find every file under `src/` that imports `serde_json` using case-insensitive matching."
+  ],
+  "usage": {
+    "input_tokens": 2009,
+    "output_tokens": 142
+  }
+}

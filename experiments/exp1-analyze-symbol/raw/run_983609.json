@@ -1,0 +1,11 @@
+{
+  "stop_reason": "end_turn",
+  "tool_uses": [],
+  "text": [
+    "I can trace that for you, but I need to know which directory/codebase to search in \u2014 the `analyze_symbol` tool requires a root path to scan. Could you provide the directory path (e.g., `src/`, `.`, or a specific module folder) where `parse_config` is defined/used?\n\nOnce you provide that, I'll run a call-graph lookup (with a depth of 1, expandable if needed) to show:\n- **Callers**: functions/files that invoke `parse_config`\n- **Callees**: functions that `parse_config` itself calls"
+  ],
+  "usage": {
+    "input_tokens": 2896,
+    "output_tokens": 276
+  }
+}

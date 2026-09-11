@@ -1,0 +1,19 @@
+{
+  "stop_reason": "tool_use",
+  "tool_uses": [
+    {
+      "name": "analyze_directory",
+      "input": {
+        "path": ".",
+        "max_depth": 2
+      }
+    }
+  ],
+  "text": [
+    "I'll help you find who calls the `run` function in `main.rs`. Let me start by analyzing the directory structure and then looking for callers of the `run` function."
+  ],
+  "usage": {
+    "input_tokens": 2622,
+    "output_tokens": 111
+  }
+}
