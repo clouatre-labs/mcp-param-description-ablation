@@ -1,0 +1,4242 @@
+[
+  {
+    "run_id": "run_004769",
+    "prompt_id": "P3",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2919,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_010478",
+    "prompt_id": "P2",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2019,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_010612",
+    "prompt_id": "P6",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "match_mode": "incorrect",
+      "def_use": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2297,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_014355",
+    "prompt_id": "P5",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2844,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_015388",
+    "prompt_id": "P1",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2880,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_016019",
+    "prompt_id": "P7",
+    "category": "should_not_set_flag",
+    "checks": {
+      "follow_depth": "omitted",
+      "impl_only": "omitted",
+      "import_lookup": "omitted",
+      "def_use": "omitted",
+      "match_mode": "omitted"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2287,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_016154",
+    "prompt_id": "P1",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2023,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_018626",
+    "prompt_id": "P6",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "match_mode": "correct",
+      "def_use": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2854,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_019536",
+    "prompt_id": "P2",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2920,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_020176",
+    "prompt_id": "P6",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "match_mode": "correct",
+      "def_use": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2905,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_022177",
+    "prompt_id": "P6",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "match_mode": "incorrect",
+      "def_use": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2297,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_025878",
+    "prompt_id": "P3",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "omitted"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2345,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_026763",
+    "prompt_id": "P4",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2867,
+    "param_fill_score": 1,
+    "caveat_present": true
+  },
+  {
+    "run_id": "run_028462",
+    "prompt_id": "P8",
+    "category": "should_not_set_flag",
+    "checks": {
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 3313,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_029953",
+    "prompt_id": "P3",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "omitted"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2633,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_031756",
+    "prompt_id": "P6",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "match_mode": "incorrect",
+      "def_use": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2623,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_033631",
+    "prompt_id": "P3",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2460,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_036591",
+    "prompt_id": "P4",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2459,
+    "param_fill_score": 1,
+    "caveat_present": false
+  },
+  {
+    "run_id": "run_036653",
+    "prompt_id": "P4",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 3326,
+    "param_fill_score": 1,
+    "caveat_present": false
+  },
+  {
+    "run_id": "run_041272",
+    "prompt_id": "P6",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "match_mode": "correct",
+      "def_use": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2854,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_045554",
+    "prompt_id": "P3",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2919,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_046033",
+    "prompt_id": "P4",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 3326,
+    "param_fill_score": 1,
+    "caveat_present": true
+  },
+  {
+    "run_id": "run_050081",
+    "prompt_id": "P7",
+    "category": "should_not_set_flag",
+    "checks": {
+      "follow_depth": "omitted",
+      "impl_only": "omitted",
+      "import_lookup": "omitted",
+      "def_use": "omitted",
+      "match_mode": "omitted"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2287,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_050408",
+    "prompt_id": "P7",
+    "category": "should_not_set_flag",
+    "checks": {
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "import_lookup": "correct",
+      "def_use": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2896,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_051681",
+    "prompt_id": "P7",
+    "category": "should_not_set_flag",
+    "checks": {
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "import_lookup": "correct",
+      "def_use": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2845,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_054805",
+    "prompt_id": "P6",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "match_mode": "correct",
+      "def_use": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2905,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_056932",
+    "prompt_id": "P2",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2869,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_060163",
+    "prompt_id": "P4",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2299,
+    "param_fill_score": 1,
+    "caveat_present": false
+  },
+  {
+    "run_id": "run_063134",
+    "prompt_id": "P3",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2868,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_067104",
+    "prompt_id": "P8",
+    "category": "should_not_set_flag",
+    "checks": {
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2446,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_067145",
+    "prompt_id": "P5",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2326,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_074098",
+    "prompt_id": "P3",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "omitted"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2633,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_078175",
+    "prompt_id": "P1",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2931,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_078526",
+    "prompt_id": "P4",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2011,
+    "param_fill_score": 1,
+    "caveat_present": false
+  },
+  {
+    "run_id": "run_084674",
+    "prompt_id": "P4",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 3326,
+    "param_fill_score": 1,
+    "caveat_present": true
+  },
+  {
+    "run_id": "run_085316",
+    "prompt_id": "P1",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2311,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_089040",
+    "prompt_id": "P3",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "omitted"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2345,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_095470",
+    "prompt_id": "P1",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2931,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_095793",
+    "prompt_id": "P6",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "match_mode": "incorrect",
+      "def_use": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2335,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_096560",
+    "prompt_id": "P1",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2637,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_106985",
+    "prompt_id": "P7",
+    "category": "should_not_set_flag",
+    "checks": {
+      "follow_depth": "omitted",
+      "impl_only": "omitted",
+      "import_lookup": "omitted",
+      "def_use": "omitted",
+      "match_mode": "omitted"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2325,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_110552",
+    "prompt_id": "P4",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2459,
+    "param_fill_score": 1,
+    "caveat_present": false
+  },
+  {
+    "run_id": "run_111815",
+    "prompt_id": "P3",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "omitted"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2307,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_112320",
+    "prompt_id": "P6",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "match_mode": "incorrect",
+      "def_use": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2297,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_119757",
+    "prompt_id": "P5",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2326,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_122270",
+    "prompt_id": "P4",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2625,
+    "param_fill_score": 1,
+    "caveat_present": false
+  },
+  {
+    "run_id": "run_122806",
+    "prompt_id": "P7",
+    "category": "should_not_set_flag",
+    "checks": {
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "import_lookup": "correct",
+      "def_use": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2845,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_123320",
+    "prompt_id": "P6",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "match_mode": "correct",
+      "def_use": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2623,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_128052",
+    "prompt_id": "P4",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2011,
+    "param_fill_score": 1,
+    "caveat_present": false
+  },
+  {
+    "run_id": "run_131819",
+    "prompt_id": "P1",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2472,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_133592",
+    "prompt_id": "P8",
+    "category": "should_not_set_flag",
+    "checks": {
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2854,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_137448",
+    "prompt_id": "P3",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "omitted"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2307,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_140154",
+    "prompt_id": "P6",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "match_mode": "correct",
+      "def_use": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 3313,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_140361",
+    "prompt_id": "P5",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2000,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_141138",
+    "prompt_id": "P7",
+    "category": "should_not_set_flag",
+    "checks": {
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "import_lookup": "correct",
+      "def_use": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2437,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_142783",
+    "prompt_id": "P6",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "match_mode": "incorrect",
+      "def_use": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2446,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_144556",
+    "prompt_id": "P8",
+    "category": "should_not_set_flag",
+    "checks": {
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2854,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_144833",
+    "prompt_id": "P5",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2895,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_145610",
+    "prompt_id": "P5",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2000,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_145898",
+    "prompt_id": "P1",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2880,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_146835",
+    "prompt_id": "P4",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2918,
+    "param_fill_score": 1,
+    "caveat_present": false
+  },
+  {
+    "run_id": "run_148370",
+    "prompt_id": "P2",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2920,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_150659",
+    "prompt_id": "P5",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2288,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_154170",
+    "prompt_id": "P5",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2614,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_165432",
+    "prompt_id": "P8",
+    "category": "should_not_set_flag",
+    "checks": {
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2905,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_168563",
+    "prompt_id": "P1",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "hallucinated_default"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2349,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_172882",
+    "prompt_id": "P1",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2472,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_175001",
+    "prompt_id": "P1",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 3339,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_177266",
+    "prompt_id": "P6",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "match_mode": "correct",
+      "def_use": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 3313,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_183753",
+    "prompt_id": "P8",
+    "category": "should_not_set_flag",
+    "checks": {
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2854,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_184378",
+    "prompt_id": "P7",
+    "category": "should_not_set_flag",
+    "checks": {
+      "follow_depth": "omitted",
+      "impl_only": "omitted",
+      "import_lookup": "omitted",
+      "def_use": "omitted",
+      "match_mode": "omitted"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2287,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_188455",
+    "prompt_id": "P4",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2011,
+    "param_fill_score": 1,
+    "caveat_present": false
+  },
+  {
+    "run_id": "run_188857",
+    "prompt_id": "P5",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2614,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_192310",
+    "prompt_id": "P1",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2349,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_195377",
+    "prompt_id": "P1",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2311,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_197598",
+    "prompt_id": "P2",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2869,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_199429",
+    "prompt_id": "P5",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 3303,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_199448",
+    "prompt_id": "P2",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2461,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_202818",
+    "prompt_id": "P5",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2288,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_203803",
+    "prompt_id": "P3",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2919,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_207815",
+    "prompt_id": "P5",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 3303,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_208398",
+    "prompt_id": "P3",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "omitted"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2345,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_210899",
+    "prompt_id": "P6",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "match_mode": "incorrect",
+      "def_use": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2446,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_213035",
+    "prompt_id": "P3",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "omitted"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2633,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_217227",
+    "prompt_id": "P7",
+    "category": "should_not_set_flag",
+    "checks": {
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "import_lookup": "correct",
+      "def_use": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2896,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_218701",
+    "prompt_id": "P7",
+    "category": "should_not_set_flag",
+    "checks": {
+      "follow_depth": "omitted",
+      "impl_only": "omitted",
+      "import_lookup": "omitted",
+      "def_use": "omitted",
+      "match_mode": "omitted"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2325,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_220854",
+    "prompt_id": "P3",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "omitted"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2019,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_222045",
+    "prompt_id": "P2",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "omitted"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2019,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_227853",
+    "prompt_id": "P2",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2633,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_229332",
+    "prompt_id": "P6",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "match_mode": "correct",
+      "def_use": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2854,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_232328",
+    "prompt_id": "P4",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2625,
+    "param_fill_score": 1,
+    "caveat_present": false
+  },
+  {
+    "run_id": "run_233381",
+    "prompt_id": "P8",
+    "category": "should_not_set_flag",
+    "checks": {
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2334,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_233875",
+    "prompt_id": "P4",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2867,
+    "param_fill_score": 1,
+    "caveat_present": false
+  },
+  {
+    "run_id": "run_236145",
+    "prompt_id": "P2",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2019,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_236369",
+    "prompt_id": "P4",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2459,
+    "param_fill_score": 1,
+    "caveat_present": false
+  },
+  {
+    "run_id": "run_237442",
+    "prompt_id": "P6",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "match_mode": "incorrect",
+      "def_use": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2623,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_240341",
+    "prompt_id": "P7",
+    "category": "should_not_set_flag",
+    "checks": {
+      "follow_depth": "omitted",
+      "impl_only": "omitted",
+      "import_lookup": "omitted",
+      "def_use": "omitted",
+      "match_mode": "omitted"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2287,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_240361",
+    "prompt_id": "P7",
+    "category": "should_not_set_flag",
+    "checks": {
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "import_lookup": "correct",
+      "def_use": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2896,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_243101",
+    "prompt_id": "P7",
+    "category": "should_not_set_flag",
+    "checks": {
+      "follow_depth": "omitted",
+      "impl_only": "omitted",
+      "import_lookup": "omitted",
+      "def_use": "omitted",
+      "match_mode": "omitted"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2325,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_244088",
+    "prompt_id": "P2",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2920,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_250665",
+    "prompt_id": "P7",
+    "category": "should_not_set_flag",
+    "checks": {
+      "follow_depth": "incorrect",
+      "impl_only": "correct",
+      "import_lookup": "correct",
+      "def_use": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2437,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_254139",
+    "prompt_id": "P7",
+    "category": "should_not_set_flag",
+    "checks": {
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "import_lookup": "correct",
+      "def_use": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2845,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_254341",
+    "prompt_id": "P2",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2461,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_258804",
+    "prompt_id": "P8",
+    "category": "should_not_set_flag",
+    "checks": {
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2008,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_263570",
+    "prompt_id": "P3",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "omitted"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2019,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_271303",
+    "prompt_id": "P3",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "omitted"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2307,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_272189",
+    "prompt_id": "P4",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2299,
+    "param_fill_score": 1,
+    "caveat_present": false
+  },
+  {
+    "run_id": "run_275670",
+    "prompt_id": "P6",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "match_mode": "incorrect",
+      "def_use": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2446,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_276623",
+    "prompt_id": "P6",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "match_mode": "correct",
+      "def_use": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2854,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_277288",
+    "prompt_id": "P3",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2919,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_285856",
+    "prompt_id": "P4",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2459,
+    "param_fill_score": 1,
+    "caveat_present": false
+  },
+  {
+    "run_id": "run_288697",
+    "prompt_id": "P8",
+    "category": "should_not_set_flag",
+    "checks": {
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2008,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_297152",
+    "prompt_id": "P6",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "match_mode": "incorrect",
+      "def_use": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2446,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_300010",
+    "prompt_id": "P3",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2919,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_302982",
+    "prompt_id": "P7",
+    "category": "should_not_set_flag",
+    "checks": {
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "import_lookup": "correct",
+      "def_use": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2437,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_303488",
+    "prompt_id": "P8",
+    "category": "should_not_set_flag",
+    "checks": {
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2854,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_309832",
+    "prompt_id": "P3",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "omitted"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2307,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_311188",
+    "prompt_id": "P5",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2844,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_317318",
+    "prompt_id": "P2",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 3328,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_317483",
+    "prompt_id": "P8",
+    "category": "should_not_set_flag",
+    "checks": {
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2622,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_322346",
+    "prompt_id": "P2",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2461,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_327169",
+    "prompt_id": "P1",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "omitted"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2023,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_331616",
+    "prompt_id": "P1",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2472,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_335425",
+    "prompt_id": "P5",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2288,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_336112",
+    "prompt_id": "P6",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "match_mode": "incorrect",
+      "def_use": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2297,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_338886",
+    "prompt_id": "P7",
+    "category": "should_not_set_flag",
+    "checks": {
+      "follow_depth": "omitted",
+      "impl_only": "omitted",
+      "import_lookup": "omitted",
+      "def_use": "omitted",
+      "match_mode": "omitted"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 1999,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_340246",
+    "prompt_id": "P2",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2461,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_340942",
+    "prompt_id": "P3",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2868,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_342160",
+    "prompt_id": "P8",
+    "category": "should_not_set_flag",
+    "checks": {
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2296,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_344576",
+    "prompt_id": "P6",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "match_mode": "incorrect",
+      "def_use": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2335,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_344581",
+    "prompt_id": "P2",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2345,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_345004",
+    "prompt_id": "P8",
+    "category": "should_not_set_flag",
+    "checks": {
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2296,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_352135",
+    "prompt_id": "P3",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "omitted"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2345,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_355892",
+    "prompt_id": "P8",
+    "category": "should_not_set_flag",
+    "checks": {
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2334,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_356592",
+    "prompt_id": "P1",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2931,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_358276",
+    "prompt_id": "P2",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "omitted"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2345,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_361956",
+    "prompt_id": "P6",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "match_mode": "correct",
+      "def_use": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2905,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_366998",
+    "prompt_id": "P6",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "match_mode": "incorrect",
+      "def_use": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2335,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_371404",
+    "prompt_id": "P4",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2867,
+    "param_fill_score": 1,
+    "caveat_present": true
+  },
+  {
+    "run_id": "run_376267",
+    "prompt_id": "P5",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2000,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_388646",
+    "prompt_id": "P5",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2436,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_388819",
+    "prompt_id": "P8",
+    "category": "should_not_set_flag",
+    "checks": {
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2905,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_391233",
+    "prompt_id": "P7",
+    "category": "should_not_set_flag",
+    "checks": {
+      "follow_depth": "omitted",
+      "impl_only": "omitted",
+      "import_lookup": "omitted",
+      "def_use": "omitted",
+      "match_mode": "omitted"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2613,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_393017",
+    "prompt_id": "P3",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2460,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_396413",
+    "prompt_id": "P6",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "match_mode": "incorrect",
+      "def_use": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2297,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_397178",
+    "prompt_id": "P5",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2844,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_404428",
+    "prompt_id": "P7",
+    "category": "should_not_set_flag",
+    "checks": {
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "import_lookup": "correct",
+      "def_use": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2896,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_407623",
+    "prompt_id": "P5",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2288,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_412744",
+    "prompt_id": "P8",
+    "category": "should_not_set_flag",
+    "checks": {
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2296,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_431864",
+    "prompt_id": "P1",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2637,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_432041",
+    "prompt_id": "P8",
+    "category": "should_not_set_flag",
+    "checks": {
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2446,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_439476",
+    "prompt_id": "P7",
+    "category": "should_not_set_flag",
+    "checks": {
+      "follow_depth": "omitted",
+      "impl_only": "omitted",
+      "import_lookup": "omitted",
+      "def_use": "omitted",
+      "match_mode": "omitted"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2287,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_446092",
+    "prompt_id": "P3",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 3327,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_450985",
+    "prompt_id": "P4",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2459,
+    "param_fill_score": 1,
+    "caveat_present": false
+  },
+  {
+    "run_id": "run_464534",
+    "prompt_id": "P4",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2625,
+    "param_fill_score": 1,
+    "caveat_present": false
+  },
+  {
+    "run_id": "run_466946",
+    "prompt_id": "P2",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "omitted"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2019,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_472843",
+    "prompt_id": "P8",
+    "category": "should_not_set_flag",
+    "checks": {
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2622,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_474919",
+    "prompt_id": "P3",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "omitted"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2019,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_481012",
+    "prompt_id": "P4",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2918,
+    "param_fill_score": 1,
+    "caveat_present": false
+  },
+  {
+    "run_id": "run_484360",
+    "prompt_id": "P5",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2844,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_486154",
+    "prompt_id": "P7",
+    "category": "should_not_set_flag",
+    "checks": {
+      "follow_depth": "omitted",
+      "impl_only": "omitted",
+      "import_lookup": "omitted",
+      "def_use": "omitted",
+      "match_mode": "omitted"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 1999,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_489915",
+    "prompt_id": "P6",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "match_mode": "incorrect",
+      "def_use": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2009,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_491773",
+    "prompt_id": "P5",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2436,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_495115",
+    "prompt_id": "P3",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 3327,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_500558",
+    "prompt_id": "P3",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2868,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_503208",
+    "prompt_id": "P2",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2869,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_504301",
+    "prompt_id": "P8",
+    "category": "should_not_set_flag",
+    "checks": {
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 3313,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_507252",
+    "prompt_id": "P3",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "omitted"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2345,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_509884",
+    "prompt_id": "P8",
+    "category": "should_not_set_flag",
+    "checks": {
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2008,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_517892",
+    "prompt_id": "P2",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 3328,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_519214",
+    "prompt_id": "P5",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2436,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_524849",
+    "prompt_id": "P7",
+    "category": "should_not_set_flag",
+    "checks": {
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "import_lookup": "correct",
+      "def_use": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 3304,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_524983",
+    "prompt_id": "P1",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2349,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_536893",
+    "prompt_id": "P2",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "omitted"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2307,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_539653",
+    "prompt_id": "P5",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2288,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_541472",
+    "prompt_id": "P3",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2460,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_542413",
+    "prompt_id": "P1",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 3339,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_551006",
+    "prompt_id": "P7",
+    "category": "should_not_set_flag",
+    "checks": {
+      "follow_depth": "omitted",
+      "impl_only": "omitted",
+      "import_lookup": "omitted",
+      "def_use": "omitted",
+      "match_mode": "omitted"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 1999,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_554334",
+    "prompt_id": "P1",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2637,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_554486",
+    "prompt_id": "P7",
+    "category": "should_not_set_flag",
+    "checks": {
+      "follow_depth": "omitted",
+      "impl_only": "omitted",
+      "import_lookup": "omitted",
+      "def_use": "omitted",
+      "match_mode": "omitted"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2613,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_557756",
+    "prompt_id": "P8",
+    "category": "should_not_set_flag",
+    "checks": {
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2905,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_563198",
+    "prompt_id": "P3",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "omitted"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 3327,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_564666",
+    "prompt_id": "P5",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2326,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_565345",
+    "prompt_id": "P4",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2867,
+    "param_fill_score": 1,
+    "caveat_present": true
+  },
+  {
+    "run_id": "run_567066",
+    "prompt_id": "P3",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2868,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_568582",
+    "prompt_id": "P3",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 3327,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_571595",
+    "prompt_id": "P2",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "omitted"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2019,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_571601",
+    "prompt_id": "P6",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "match_mode": "correct",
+      "def_use": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2854,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_572713",
+    "prompt_id": "P8",
+    "category": "should_not_set_flag",
+    "checks": {
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2622,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_579442",
+    "prompt_id": "P1",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2931,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_585110",
+    "prompt_id": "P1",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 3339,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_585459",
+    "prompt_id": "P4",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2918,
+    "param_fill_score": 1,
+    "caveat_present": false
+  },
+  {
+    "run_id": "run_592029",
+    "prompt_id": "P6",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "match_mode": "correct",
+      "def_use": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 3313,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_594587",
+    "prompt_id": "P2",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2345,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_600180",
+    "prompt_id": "P2",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2920,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_602660",
+    "prompt_id": "P7",
+    "category": "should_not_set_flag",
+    "checks": {
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "import_lookup": "correct",
+      "def_use": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2845,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_610696",
+    "prompt_id": "P5",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2436,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_613260",
+    "prompt_id": "P8",
+    "category": "should_not_set_flag",
+    "checks": {
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2008,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_614028",
+    "prompt_id": "P8",
+    "category": "should_not_set_flag",
+    "checks": {
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2008,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_615239",
+    "prompt_id": "P4",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2011,
+    "param_fill_score": 1,
+    "caveat_present": false
+  },
+  {
+    "run_id": "run_627339",
+    "prompt_id": "P6",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "match_mode": "incorrect",
+      "def_use": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2335,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_629289",
+    "prompt_id": "P2",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2345,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_632250",
+    "prompt_id": "P4",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2867,
+    "param_fill_score": 1,
+    "caveat_present": true
+  },
+  {
+    "run_id": "run_633343",
+    "prompt_id": "P1",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2311,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_638279",
+    "prompt_id": "P5",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2000,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_645222",
+    "prompt_id": "P6",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "match_mode": "incorrect",
+      "def_use": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2009,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_647090",
+    "prompt_id": "P6",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "match_mode": "incorrect",
+      "def_use": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2009,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_656281",
+    "prompt_id": "P8",
+    "category": "should_not_set_flag",
+    "checks": {
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2334,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_661050",
+    "prompt_id": "P8",
+    "category": "should_not_set_flag",
+    "checks": {
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2905,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_666844",
+    "prompt_id": "P3",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2460,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_667918",
+    "prompt_id": "P2",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2869,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_669888",
+    "prompt_id": "P3",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "omitted"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2633,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_670500",
+    "prompt_id": "P4",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 3326,
+    "param_fill_score": 1,
+    "caveat_present": false
+  },
+  {
+    "run_id": "run_670973",
+    "prompt_id": "P4",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "omitted"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 3326,
+    "param_fill_score": 0,
+    "caveat_present": true
+  },
+  {
+    "run_id": "run_671392",
+    "prompt_id": "P2",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "omitted"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2633,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_673530",
+    "prompt_id": "P3",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "omitted"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2019,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_674835",
+    "prompt_id": "P7",
+    "category": "should_not_set_flag",
+    "checks": {
+      "follow_depth": "omitted",
+      "impl_only": "omitted",
+      "import_lookup": "omitted",
+      "def_use": "omitted",
+      "match_mode": "omitted"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2325,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_680210",
+    "prompt_id": "P1",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2880,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_682531",
+    "prompt_id": "P6",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "match_mode": "correct",
+      "def_use": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 3313,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_685971",
+    "prompt_id": "P1",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2472,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_690294",
+    "prompt_id": "P4",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2337,
+    "param_fill_score": 1,
+    "caveat_present": false
+  },
+  {
+    "run_id": "run_697003",
+    "prompt_id": "P6",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "match_mode": "incorrect",
+      "def_use": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2009,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_697766",
+    "prompt_id": "P5",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2895,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_699469",
+    "prompt_id": "P6",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "match_mode": "correct",
+      "def_use": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2905,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_700752",
+    "prompt_id": "P5",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 3303,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_701210",
+    "prompt_id": "P4",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2299,
+    "param_fill_score": 1,
+    "caveat_present": false
+  },
+  {
+    "run_id": "run_703439",
+    "prompt_id": "P1",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "hallucinated_default"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2637,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_705730",
+    "prompt_id": "P5",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2326,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_706839",
+    "prompt_id": "P4",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2337,
+    "param_fill_score": 1,
+    "caveat_present": false
+  },
+  {
+    "run_id": "run_708453",
+    "prompt_id": "P5",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 3303,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_713877",
+    "prompt_id": "P1",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 3339,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_727418",
+    "prompt_id": "P5",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2614,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_730529",
+    "prompt_id": "P5",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2895,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_735689",
+    "prompt_id": "P2",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 3328,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_736507",
+    "prompt_id": "P6",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "match_mode": "correct",
+      "def_use": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2905,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_738881",
+    "prompt_id": "P8",
+    "category": "should_not_set_flag",
+    "checks": {
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2296,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_741801",
+    "prompt_id": "P1",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2349,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_744878",
+    "prompt_id": "P1",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2349,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_755616",
+    "prompt_id": "P8",
+    "category": "should_not_set_flag",
+    "checks": {
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2446,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_761609",
+    "prompt_id": "P4",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2299,
+    "param_fill_score": 1,
+    "caveat_present": false
+  },
+  {
+    "run_id": "run_765197",
+    "prompt_id": "P4",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2625,
+    "param_fill_score": 1,
+    "caveat_present": false
+  },
+  {
+    "run_id": "run_768498",
+    "prompt_id": "P6",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "match_mode": "incorrect",
+      "def_use": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2009,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_776039",
+    "prompt_id": "P3",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2460,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_778418",
+    "prompt_id": "P1",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2637,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_788099",
+    "prompt_id": "P5",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2895,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_790690",
+    "prompt_id": "P1",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "incorrect"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2023,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_806403",
+    "prompt_id": "P8",
+    "category": "should_not_set_flag",
+    "checks": {
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2296,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_808271",
+    "prompt_id": "P1",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 3339,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_814701",
+    "prompt_id": "P5",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2436,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_814752",
+    "prompt_id": "P8",
+    "category": "should_not_set_flag",
+    "checks": {
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 3313,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_817413",
+    "prompt_id": "P2",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2461,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_826829",
+    "prompt_id": "P7",
+    "category": "should_not_set_flag",
+    "checks": {
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "import_lookup": "correct",
+      "def_use": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2613,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_828590",
+    "prompt_id": "P6",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "match_mode": "correct",
+      "def_use": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2623,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_836833",
+    "prompt_id": "P8",
+    "category": "should_not_set_flag",
+    "checks": {
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 3313,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_839722",
+    "prompt_id": "P5",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2895,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_840509",
+    "prompt_id": "P3",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "omitted"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2307,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_840763",
+    "prompt_id": "P2",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "omitted"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2307,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_841277",
+    "prompt_id": "P4",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2918,
+    "param_fill_score": 1,
+    "caveat_present": false
+  },
+  {
+    "run_id": "run_843050",
+    "prompt_id": "P4",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "omitted"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2625,
+    "param_fill_score": 0,
+    "caveat_present": false
+  },
+  {
+    "run_id": "run_843936",
+    "prompt_id": "P3",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "omitted"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2019,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_845160",
+    "prompt_id": "P1",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2023,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_845486",
+    "prompt_id": "P7",
+    "category": "should_not_set_flag",
+    "checks": {
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "import_lookup": "correct",
+      "def_use": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 3304,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_849121",
+    "prompt_id": "P1",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2880,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_853462",
+    "prompt_id": "P5",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2844,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_869651",
+    "prompt_id": "P8",
+    "category": "should_not_set_flag",
+    "checks": {
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2334,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_872245",
+    "prompt_id": "P1",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "omitted"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2311,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_873919",
+    "prompt_id": "P7",
+    "category": "should_not_set_flag",
+    "checks": {
+      "follow_depth": "omitted",
+      "impl_only": "omitted",
+      "import_lookup": "omitted",
+      "def_use": "omitted",
+      "match_mode": "omitted"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2613,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_878680",
+    "prompt_id": "P4",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2299,
+    "param_fill_score": 1,
+    "caveat_present": true
+  },
+  {
+    "run_id": "run_880820",
+    "prompt_id": "P4",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2918,
+    "param_fill_score": 1,
+    "caveat_present": false
+  },
+  {
+    "run_id": "run_883908",
+    "prompt_id": "P5",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2326,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_884423",
+    "prompt_id": "P8",
+    "category": "should_not_set_flag",
+    "checks": {
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2622,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_885424",
+    "prompt_id": "P1",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2472,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_887287",
+    "prompt_id": "P7",
+    "category": "should_not_set_flag",
+    "checks": {
+      "follow_depth": "omitted",
+      "impl_only": "omitted",
+      "import_lookup": "omitted",
+      "def_use": "omitted",
+      "match_mode": "omitted"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 1999,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_892612",
+    "prompt_id": "P6",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "match_mode": "incorrect",
+      "def_use": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2335,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_893794",
+    "prompt_id": "P8",
+    "category": "should_not_set_flag",
+    "checks": {
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 3313,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_898040",
+    "prompt_id": "P5",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2614,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_900666",
+    "prompt_id": "P7",
+    "category": "should_not_set_flag",
+    "checks": {
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "import_lookup": "correct",
+      "def_use": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 3304,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_902140",
+    "prompt_id": "P7",
+    "category": "should_not_set_flag",
+    "checks": {
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "import_lookup": "correct",
+      "def_use": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2845,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_905511",
+    "prompt_id": "P7",
+    "category": "should_not_set_flag",
+    "checks": {
+      "follow_depth": "omitted",
+      "impl_only": "omitted",
+      "import_lookup": "omitted",
+      "def_use": "omitted",
+      "match_mode": "omitted"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 1999,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_907800",
+    "prompt_id": "P2",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2920,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_908492",
+    "prompt_id": "P2",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2345,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_911436",
+    "prompt_id": "P2",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2633,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_926654",
+    "prompt_id": "P2",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 3328,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_928662",
+    "prompt_id": "P2",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "omitted"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2633,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_929414",
+    "prompt_id": "P1",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "incorrect"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2023,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_930077",
+    "prompt_id": "P8",
+    "category": "should_not_set_flag",
+    "checks": {
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2446,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_934753",
+    "prompt_id": "P2",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2307,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_937208",
+    "prompt_id": "P1",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2311,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_937237",
+    "prompt_id": "P5",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 3303,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_937732",
+    "prompt_id": "P6",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "match_mode": "incorrect",
+      "def_use": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2446,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_938710",
+    "prompt_id": "P2",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2633,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_941607",
+    "prompt_id": "P7",
+    "category": "should_not_set_flag",
+    "checks": {
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "import_lookup": "correct",
+      "def_use": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 3304,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_941679",
+    "prompt_id": "P5",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2000,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_944015",
+    "prompt_id": "P8",
+    "category": "should_not_set_flag",
+    "checks": {
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2905,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_944800",
+    "prompt_id": "P1",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "hallucinated_default"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2931,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_945218",
+    "prompt_id": "P4",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2337,
+    "param_fill_score": 1,
+    "caveat_present": true
+  },
+  {
+    "run_id": "run_945665",
+    "prompt_id": "P7",
+    "category": "should_not_set_flag",
+    "checks": {
+      "follow_depth": "omitted",
+      "impl_only": "omitted",
+      "import_lookup": "omitted",
+      "def_use": "omitted",
+      "match_mode": "omitted"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2613,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_946469",
+    "prompt_id": "P2",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "omitted"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2307,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_947805",
+    "prompt_id": "P5",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2614,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_948424",
+    "prompt_id": "P4",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2337,
+    "param_fill_score": 1,
+    "caveat_present": true
+  },
+  {
+    "run_id": "run_949683",
+    "prompt_id": "P7",
+    "category": "should_not_set_flag",
+    "checks": {
+      "follow_depth": "omitted",
+      "impl_only": "omitted",
+      "import_lookup": "omitted",
+      "def_use": "omitted",
+      "match_mode": "omitted"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2437,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_951546",
+    "prompt_id": "P8",
+    "category": "should_not_set_flag",
+    "checks": {
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2334,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_951645",
+    "prompt_id": "P8",
+    "category": "should_not_set_flag",
+    "checks": {
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2854,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_952085",
+    "prompt_id": "P2",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2869,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_957147",
+    "prompt_id": "P2",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2307,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_958266",
+    "prompt_id": "P4",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2011,
+    "param_fill_score": 1,
+    "caveat_present": false
+  },
+  {
+    "run_id": "run_966302",
+    "prompt_id": "P3",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 3327,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_968309",
+    "prompt_id": "P6",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "match_mode": "correct",
+      "def_use": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2623,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_969199",
+    "prompt_id": "P8",
+    "category": "should_not_set_flag",
+    "checks": {
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2622,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_969528",
+    "prompt_id": "P2",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 3328,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_971562",
+    "prompt_id": "P7",
+    "category": "should_not_set_flag",
+    "checks": {
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "import_lookup": "correct",
+      "def_use": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 3304,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_972391",
+    "prompt_id": "P7",
+    "category": "should_not_set_flag",
+    "checks": {
+      "follow_depth": "correct",
+      "impl_only": "correct",
+      "import_lookup": "correct",
+      "def_use": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2437,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_972807",
+    "prompt_id": "P7",
+    "category": "should_not_set_flag",
+    "checks": {
+      "follow_depth": "omitted",
+      "impl_only": "omitted",
+      "import_lookup": "omitted",
+      "def_use": "omitted",
+      "match_mode": "omitted"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2325,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_974035",
+    "prompt_id": "P3",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "omitted"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2633,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_974347",
+    "prompt_id": "P4",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2337,
+    "param_fill_score": 1,
+    "caveat_present": false
+  },
+  {
+    "run_id": "run_977171",
+    "prompt_id": "P6",
+    "category": "mutual_exclusion",
+    "checks": {
+      "import_lookup": "correct",
+      "match_mode": "correct",
+      "def_use": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 3313,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_983609",
+    "prompt_id": "P7",
+    "category": "should_not_set_flag",
+    "checks": {
+      "follow_depth": "omitted",
+      "impl_only": "omitted",
+      "import_lookup": "omitted",
+      "def_use": "omitted",
+      "match_mode": "omitted"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2896,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_988669",
+    "prompt_id": "P3",
+    "category": "follow_depth_warning",
+    "checks": {
+      "follow_depth": "omitted"
+    },
+    "tool_selection_correct": false,
+    "input_tokens": 2868,
+    "param_fill_score": 0,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_993930",
+    "prompt_id": "P1",
+    "category": "retry_match_mode",
+    "checks": {
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2880,
+    "param_fill_score": 1,
+    "caveat_present": null
+  },
+  {
+    "run_id": "run_995999",
+    "prompt_id": "P8",
+    "category": "should_not_set_flag",
+    "checks": {
+      "impl_only": "correct",
+      "match_mode": "correct"
+    },
+    "tool_selection_correct": true,
+    "input_tokens": 2446,
+    "param_fill_score": 1,
+    "caveat_present": null
+  }
+]

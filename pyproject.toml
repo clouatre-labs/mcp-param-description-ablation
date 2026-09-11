@@ -6,10 +6,15 @@ requires-python = ">=3.11"
 dependencies = [
     "anthropic>=0.69.0",
     "httpx>=0.25.0",
+    "scipy>=1.17.1",
 ]
 
 [dependency-groups]
 dev = [
     "ruff>=0.9.0",
     "pyright>=1.1.0",
+    "pytest>=9.1.1",
 ]
+
+[tool.pyright]
+extraPaths = ["recipe"]
