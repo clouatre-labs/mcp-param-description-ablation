@@ -20,10 +20,12 @@ Does moving parameter-level detail out of an MCP tool's description string and i
 - B and D are exploratory/diagnostic only.
 - Fixtures: `fixtures/cell-{a,b,c,d}.json`, pinned to aptu-coder release `v0.32.5` (commit
   `21a875b`). Cell C is literal current production text (verified byte-for-byte against
-  `crates/aptu-coder/src/lib.rs` and `crates/aptu-coder-core/src/types.rs`). Cell A is
-  constructed (pre-#593-style prose, extended for `import_lookup`/`def_use` since neither
-  param existed pre-#593). B and D use constructed sparse param docs. See each fixture's
-  `_source` field for exact provenance.
+  `crates/aptu-coder/src/lib.rs` and `crates/aptu-coder-core/src/types.rs`). Cell A
+  reconstructs the tool-description text that predates aptu-coder PR #593
+  (https://github.com/clouatre-labs/aptu-coder/pull/593, which moved per-parameter constraint
+  detail out of tool descriptions into per-field doc comments), extended for
+  `import_lookup`/`def_use` since neither param existed before that change. B and D use
+  constructed sparse param docs. See each fixture's `_source` field for exact provenance.
 
 ## Unit of analysis
 
@@ -63,20 +65,20 @@ Exploratory: B, D, tool-selection accuracy, serialized tools-list token cost
 `label-map.json` maps anonymized `run_id` -> `{cell, model, prompt_id, run_index}` and is
 sealed (written, not consulted) at harness run time. The scoring pass reads only
 `raw/<run_id>.json` (the tool call the model actually produced) joined against `prompts.json`'s
-expected values -- it does not see which cell produced a given run until after scoring, when
+expected values; it does not see which cell produced a given run until after scoring, when
 `label-map.json` is joined in for the Mann-Whitney analysis.
 
 ## Status
 
 Fixtures and rubric: done. Harness: `recipe/harness.py`, dry-run validated against 1 live
-call. Full 320-call run: **not yet executed** -- pending explicit go-ahead (real API spend).
+call. Full 320-call run: executed and blind-scored; see `analysis.json` and `scores.json`.
 
 Run mechanics: the harness accepts either `ANTHROPIC_API_KEY` or `OPENROUTER_API_KEY`
 (`ANTHROPIC_API_KEY` takes priority if both are set). OpenRouter's `/v1/messages` route
 returns the native, first-party Anthropic Messages API response shape, not an OpenAI-format
 translation, so it does not introduce a calling-path confound. Under OpenRouter,
 `--confirm-full-run` defaults to submitting via OpenRouter's async Batch API; the
-documented 24-hour completion window is a ceiling, not an estimate -- for this run's size
+documented 24-hour completion window is a ceiling, not an estimate; for this run's size
 (~160 requests/model) typical completion is well under an hour. `--sync` forces the
 synchronous per-call path instead (no-op under `ANTHROPIC_API_KEY`, already synchronous).
 `--pilot` runs one call per (cell, model) pair (8 calls total) synchronously to

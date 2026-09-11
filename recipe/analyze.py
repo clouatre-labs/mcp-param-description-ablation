@@ -1,8 +1,8 @@
 """Statistical analysis for exp1-analyze-symbol.
 
 Joins `scores.json` (blind, no cell/model) with the full `label-map.json` assignments to
-attach cell/model, then runs the pre-registered primary test -- one omnibus Mann-Whitney U
-per model, cell C vs cell A, on the binary param_fill_score -- plus exploratory descriptive
+attach cell/model, then runs the pre-registered primary test: one omnibus Mann-Whitney U
+per model, cell C vs cell A, on the binary param_fill_score, plus exploratory descriptive
 stats per (cell, model). This script runs strictly after scoring is complete, so consulting
 the full label-map.json here does not violate the scorer's blinding boundary.
 

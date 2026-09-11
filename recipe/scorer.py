@@ -2,7 +2,7 @@
 
 Reads `raw/<run_id>.json` tool calls and scores them against `prompts.json`'s pre-registered
 expected values and `incorrect_if` traps. `label-map.json` is read only to project
-`run_id -> prompt_id` (cell/model are discarded) -- the rubric applied to a given run never
+`run_id -> prompt_id` (cell/model are discarded); the rubric applied to a given run never
 depends on which cell or model produced it. `raw/pilot/` is excluded (glob("*.json") on
 `raw/` does not descend into the `pilot/` subdirectory).
 
