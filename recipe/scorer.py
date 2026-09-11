@@ -1,4 +1,4 @@
-"""Blind scoring pipeline for exp1-analyze-symbol (clouatre-labs/clouatre.ca#705).
+"""Blind scoring pipeline for exp1-analyze-symbol.
 
 Reads `raw/<run_id>.json` tool calls and scores them against `prompts.json`'s pre-registered
 expected values and `incorrect_if` traps. `label-map.json` is read only to project

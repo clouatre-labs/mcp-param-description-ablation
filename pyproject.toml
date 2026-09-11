@@ -1,7 +1,7 @@
 [project]
 name = "mcp-param-description-ablation"
 version = "0.1.0"
-description = "Harness for the MCP parameter-description ablation experiment (clouatre-labs/clouatre.ca#705)"
+description = "Harness for the MCP parameter-description ablation experiment"
 requires-python = ">=3.11"
 dependencies = [
     "anthropic>=0.69.0",
