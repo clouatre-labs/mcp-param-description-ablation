@@ -1,0 +1,20 @@
+{
+  "stop_reason": "tool_use",
+  "tool_uses": [
+    {
+      "name": "analyze_symbol",
+      "input": {
+        "path": ".",
+        "symbol": "AuthMiddleware",
+        "follow_depth": 3
+      }
+    }
+  ],
+  "text": [
+    "I'll trace `AuthMiddleware` as deep as the API allows (follow_depth=3, which is the maximum)."
+  ],
+  "usage": {
+    "input_tokens": 2337,
+    "output_tokens": 117
+  }
+}

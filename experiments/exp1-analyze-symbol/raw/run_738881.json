@@ -1,0 +1,19 @@
+{
+  "stop_reason": "tool_use",
+  "tool_uses": [
+    {
+      "name": "analyze_symbol",
+      "input": {
+        "path": ".",
+        "symbol": "run"
+      }
+    }
+  ],
+  "text": [
+    "I'll analyze the Rust crate to find who calls the `run` function defined in `main.rs`."
+  ],
+  "usage": {
+    "input_tokens": 2296,
+    "output_tokens": 94
+  }
+}

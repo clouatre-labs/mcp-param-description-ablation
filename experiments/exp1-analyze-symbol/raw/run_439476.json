@@ -1,0 +1,11 @@
+{
+  "stop_reason": "end_turn",
+  "tool_uses": [],
+  "text": [
+    "I'd be happy to help you find who calls `parse_config` and what it calls. However, I need to know which directory to search in. Could you please provide the directory path where the code is located?"
+  ],
+  "usage": {
+    "input_tokens": 2287,
+    "output_tokens": 48
+  }
+}

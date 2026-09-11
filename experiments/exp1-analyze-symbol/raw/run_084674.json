@@ -1,0 +1,20 @@
+{
+  "stop_reason": "tool_use",
+  "tool_uses": [
+    {
+      "name": "analyze_symbol",
+      "input": {
+        "path": ".",
+        "symbol": "AuthMiddleware",
+        "follow_depth": 3
+      }
+    }
+  ],
+  "text": [
+    "I'll trace `AuthMiddleware` at the maximum supported depth. The API's `follow_depth` parameter has a hard cap of 3, so I'll use that (note: levels above 2 can produce exponentially large output, but since you want the deepest trace, I'll go to the cap)."
+  ],
+  "usage": {
+    "input_tokens": 3326,
+    "output_tokens": 248
+  }
+}

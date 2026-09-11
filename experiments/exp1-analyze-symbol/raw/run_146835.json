@@ -1,0 +1,20 @@
+{
+  "stop_reason": "tool_use",
+  "tool_uses": [
+    {
+      "name": "analyze_symbol",
+      "input": {
+        "path": ".",
+        "symbol": "AuthMiddleware",
+        "follow_depth": 3
+      }
+    }
+  ],
+  "text": [
+    "I'll use the maximum allowed trace depth (follow_depth=3, which is the hard cap for this tool) to build the deepest possible call graph for `AuthMiddleware`."
+  ],
+  "usage": {
+    "input_tokens": 2918,
+    "output_tokens": 299
+  }
+}

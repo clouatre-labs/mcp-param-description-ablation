@@ -1,0 +1,25 @@
+{
+  "stop_reason": "tool_use",
+  "tool_uses": [
+    {
+      "name": "analyze_directory",
+      "input": {
+        "path": ".",
+        "max_depth": 2
+      }
+    },
+    {
+      "name": "analyze_file",
+      "input": {
+        "path": "./main.rs"
+      }
+    }
+  ],
+  "text": [
+    "I'll help you find who calls the `run` function in `main.rs`. Let me start by analyzing the directory structure to understand the crate, and then trace the calls to the `run` function."
+  ],
+  "usage": {
+    "input_tokens": 2296,
+    "output_tokens": 155
+  }
+}

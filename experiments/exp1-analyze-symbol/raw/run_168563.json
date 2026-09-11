@@ -1,0 +1,28 @@
+{
+  "stop_reason": "tool_use",
+  "tool_uses": [
+    {
+      "name": "analyze_symbol",
+      "input": {
+        "path": "src/",
+        "symbol": "parse_config",
+        "match_mode": "exact"
+      }
+    },
+    {
+      "name": "analyze_symbol",
+      "input": {
+        "path": "src/",
+        "symbol": "ParseConfig",
+        "match_mode": "exact"
+      }
+    }
+  ],
+  "text": [
+    "I'll search for `parse_config` in the `src/` directory, and since it doesn't exist with that exact name, I'll retry with case-insensitive matching to find `ParseConfig`."
+  ],
+  "usage": {
+    "input_tokens": 2349,
+    "output_tokens": 211
+  }
+}

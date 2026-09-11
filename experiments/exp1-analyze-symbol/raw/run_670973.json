@@ -1,0 +1,11 @@
+{
+  "stop_reason": "end_turn",
+  "tool_uses": [],
+  "text": [
+    "I can run that with `follow_depth=3`, which is the maximum this tool supports (values above 3 are rejected with INVALID_PARAMS).\n\nOne thing I need from you first: the **directory path** to search in \u2014 the tool requires a path to scan for `AuthMiddleware`. Could you provide that (e.g., `src/`, `backend/middleware/`, or the repo root)?\n\nAlso, a couple of quick notes on going \"as deep as possible\":\n\n- `follow_depth=3` gives direct callers/callees plus two more hops. Since depth grows exponentially with branching, this could produce a very large result \u2014 I'll set `summary` to auto (unset) so it'll auto-compact if it exceeds 50K chars, unless you specifically want the full uncompacted output (in which case tell me and I'll pass `summary=false`).\n- If you only care about trait-impl callers (Rust-specific), I can add `impl_only=true` \u2014 let me know if that applies here.\n- If you want this scoped to recent changes only, give me a `git_ref` to diff against.\n\nOnce you give me the path, I'll run:\n\n```\nanalyze_symbol(path=<your path>, symbol=\"AuthMiddleware\", follow_depth=3, match_mode=\"exact\")\n```\n\nand fall back to `match_mode=\"insensitive\"` or `\"contains\"` if the exact match doesn't hit anything."
+  ],
+  "usage": {
+    "input_tokens": 3326,
+    "output_tokens": 588
+  }
+}

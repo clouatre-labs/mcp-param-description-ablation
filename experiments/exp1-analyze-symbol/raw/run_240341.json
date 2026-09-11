@@ -1,0 +1,11 @@
+{
+  "stop_reason": "end_turn",
+  "tool_uses": [],
+  "text": [
+    "I need to know the directory path where `parse_config` is located. Could you please provide the directory path or the file path where this function is defined?"
+  ],
+  "usage": {
+    "input_tokens": 2287,
+    "output_tokens": 36
+  }
+}
