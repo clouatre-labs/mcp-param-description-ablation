@@ -3,7 +3,7 @@
 # MCP Parameter-Description Ablation
 
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
-[![Result](https://img.shields.io/badge/result-null-lightgrey)](experiments/exp1-analyze-symbol/analysis.json)
+[![Result](https://img.shields.io/badge/result-no_regression,_fewer_tokens-brightgreen)](experiments/exp1-analyze-symbol/analysis.json)
 
 Does moving parameter-level detail out of an MCP tool's description string and into
 `inputSchema.properties[*].description` regress parameter-filling accuracy, especially for
@@ -16,9 +16,10 @@ blog post: TBD.
 
 ## Status
 
-**Result: null for both models.** The full 320-call run (`recipe/harness.py`) executed and
-was blind-scored (`recipe/scorer.py`, `recipe/analyze.py`; see
-[PR #10](https://github.com/clouatre-labs/param-description-experiments/pull/10)). The
+**No detectable parameter-filling regression at two scoring resolutions; a significant,
+consistent token-cost reduction for both models.** The full 320-call run
+(`recipe/harness.py`) executed and was blind-scored (`recipe/scorer.py`, `recipe/analyze.py`;
+see [PR #10](https://github.com/clouatre-labs/param-description-experiments/pull/10)). The
 pre-registered primary test (Mann-Whitney U, cell C, lean tool description, current
 production text, vs cell A, rich tool description, param-fill score, two-tailed alpha=0.05,
 per model) found no significant difference:
@@ -43,6 +44,34 @@ No detectable parameter-filling regression from moving `analyze_symbol`'s param 
 the tool description and into `inputSchema.properties[*].description`, for either model.
 Exploratory data (cells B/D, tool-selection accuracy, serialized tools-list token cost) is in
 [`experiments/exp1-analyze-symbol/analysis.json`](experiments/exp1-analyze-symbol/analysis.json).
+
+*Table 2: Mann-Whitney U results per model, secondary comparison (cell C, lean description, vs
+cell A, rich description), fractional check-level composite score, two-tailed alpha=0.05,
+n=40 per cell. Confirms the primary null result at a finer scoring resolution.*
+
+| Model | U | p | r | n/cell |
+|---|---|---|---|---|
+| claude-haiku-4-5-20251001 | 738.5 | 0.504 | 0.077 | 40 |
+| claude-sonnet-5 | 820 | 0.569 | -0.025 | 40 |
+
+While parameter-filling accuracy did not differ significantly between cells, the token cost of
+the two tool-description variants did. `input_tokens` per call was significantly lower for cell
+C, the current lean description, than for cell A, the pre-PR-#593 rich description, for both
+models:
+
+*Table 3: Mann-Whitney U results per model, token-cost comparison (cell C, lean description, vs
+cell A, rich description), `input_tokens` per call, two-tailed alpha=0.05, n=40 per cell.
+Percent reduction is the relative drop in mean `input_tokens` from cell A to cell C.*
+
+| Model | U | p | r | n/cell | % reduction |
+|---|---|---|---|---|---|
+| claude-haiku-4-5-20251001 | 0 | <0.000001 | 1.0 | 40 | 12.4% |
+| claude-sonnet-5 | 0 | <0.000001 | 1.0 | 40 | 13.8% |
+
+Taken together, there is no detectable parameter-filling regression at two levels of scoring
+resolution, and a statistically significant token-cost reduction, for both models, from moving
+`analyze_symbol`'s parameter detail out of the tool description and into
+`inputSchema.properties[*].description`.
 
 The `hallucinated-default` score category means the model explicitly set a parameter to its
 schema default value when the prompt called for a different, non-default value; this

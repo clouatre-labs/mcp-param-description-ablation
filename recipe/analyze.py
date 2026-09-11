@@ -69,6 +69,59 @@ def primary_test(groups: dict[tuple[str, str], list[dict]]) -> dict[str, dict]:
     return tests
 
 
+def check_level_test(groups: dict[tuple[str, str], list[dict]]) -> dict[str, dict]:
+    """Per model: Mann-Whitney U (cell C vs cell A, two-sided) on the fractional
+    check-level composite (share of `checks` values equal to "correct")."""
+    models = sorted({model for _, model in groups})
+    tests: dict[str, dict] = {}
+    for model in models:
+        c_scores = [
+            sum(1 for v in r["checks"].values() if v == "correct") / len(r["checks"])
+            for r in groups.get(("c", model), [])
+        ]
+        a_scores = [
+            sum(1 for v in r["checks"].values() if v == "correct") / len(r["checks"])
+            for r in groups.get(("a", model), [])
+        ]
+        n1, n2 = len(c_scores), len(a_scores)
+        mwu = mannwhitneyu(c_scores, a_scores, alternative="two-sided")
+        # scipy's bundled type stubs don't expose MannwhitneyuResult's named fields.
+        u = float(mwu.statistic)  # pyright: ignore[reportAttributeAccessIssue]
+        pvalue = float(mwu.pvalue)  # pyright: ignore[reportAttributeAccessIssue]
+        r = 1 - (2 * u) / (n1 * n2) if n1 and n2 else None
+        tests[model] = {
+            "U": u,
+            "p": pvalue,
+            "r": r,
+            "n_C": n1,
+            "n_A": n2,
+        }
+    return tests
+
+
+def token_cost_test(groups: dict[tuple[str, str], list[dict]]) -> dict[str, dict]:
+    """Per model: Mann-Whitney U (cell C vs cell A, two-sided) on input_tokens."""
+    models = sorted({model for _, model in groups})
+    tests: dict[str, dict] = {}
+    for model in models:
+        c_tokens = [r["input_tokens"] for r in groups.get(("c", model), [])]
+        a_tokens = [r["input_tokens"] for r in groups.get(("a", model), [])]
+        n1, n2 = len(c_tokens), len(a_tokens)
+        mwu = mannwhitneyu(c_tokens, a_tokens, alternative="two-sided")
+        # scipy's bundled type stubs don't expose MannwhitneyuResult's named fields.
+        u = float(mwu.statistic)  # pyright: ignore[reportAttributeAccessIssue]
+        pvalue = float(mwu.pvalue)  # pyright: ignore[reportAttributeAccessIssue]
+        r = 1 - (2 * u) / (n1 * n2) if n1 and n2 else None
+        tests[model] = {
+            "U": u,
+            "p": pvalue,
+            "r": r,
+            "n_C": n1,
+            "n_A": n2,
+        }
+    return tests
+
+
 def exploratory(groups: dict[tuple[str, str], list[dict]]) -> dict[str, dict]:
     """Per (cell, model): mean param_fill_score, n, tool-selection rate, mean tokens."""
     result: dict[str, dict] = {}
@@ -100,6 +153,8 @@ def main() -> None:
     analysis = {
         "primary_test": primary_test(groups),
         "exploratory": exploratory(groups),
+        "secondary_accuracy_test": check_level_test(groups),
+        "token_cost_test": token_cost_test(groups),
     }
 
     out_path = exp_dir / "analysis.json"
